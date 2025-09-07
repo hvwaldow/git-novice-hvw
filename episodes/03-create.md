@@ -115,7 +115,8 @@ fatal: not a git repository (or any of the parent directories): .git
 
 ## Get a Git repository from somewhere else
 
-It is very common to copy a repository from somewhere else to your computer to work with it. GitHub is still the most prominet place for shared Git repositories world-wide, and fortunately hosts repositories containing recipes that are freely accessible, e.g.
+It is very common to copy a repository from somewhere else to your computer to work with it. GitHub is still the most prominet place for shared Git repositories world-wide, and fortunately hosts repositories containing recipes that are freely accessible, e.g. here:  
+https://github.com/cr-workshop-exercises/recipe-book.git
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
