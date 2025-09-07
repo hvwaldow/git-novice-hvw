@@ -18,7 +18,17 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"></div>
+        <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"><span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
+            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
+            </a>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
+          </abbr>
+        </span>
+
+      </div>
     </div>
     <div class="selector-container">
       <div id="theme-selector">
@@ -205,7 +215,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-setup.html">2. Setting Up Git</a>
+        <a href="02-setup.html">2. Configure Git</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -377,7 +387,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Git Cheatsheets for Quick Reference</h1>
-        <p>Last updated on 2023-05-08 |
+        <p>Last updated on 2025-09-07 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -408,7 +418,11 @@ Scientific Code using Git and GitHub</a> - A collection of explanations
 and short practical exercises to help researchers learn more about
 version control and open source software.</li>
 </ul></section><section><h2 class="section-heading" id="glossary">Glossary<a class="anchor" aria-label="anchor" href="#glossary"></a></h2>
-<hr class="half-width"><dl><dt><span id="changeset">changeset</span></dt>
+<hr class="half-width"><dl><dt><span id="branch">branch</span></dt>
+<dd>
+A sequence of <a href="#commit">commits</a>.
+</dd>
+<dt><span id="changeset">changeset</span></dt>
 <dd>
 A group of changes to one or more files that are or will be added to a
 single <a href="#commit">commit</a> in a <a href="#version-control">version control</a> <a href="#repository">repository</a>.
@@ -450,9 +464,7 @@ exchanging <a href="#commit">commits</a>.
 </dd>
 <dt><span id="repository">repository</span></dt>
 <dd>
-A storage area where a <a href="#version-control">version control</a>
-system stores the full history of <a href="#commit">commits</a> of a
-project and information about who changed what, when.
+The directory-tree that keeps your project’s files and the Git database.
 </dd>
 <dt><span id="resolve">resolve</span></dt>
 <dd>
@@ -518,7 +530,7 @@ manage conflicting changes made by different users.
 	
         | <a href="https://github.com/swcarpentry/git-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/swcarpentry/git-novice/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/swcarpentry/git-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/swcarpentry/git-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:research-data@vonwaldow.ch">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
 
@@ -537,18 +549,18 @@ manage conflicting changes made by different users.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://swcarpentry.github.io/git-novice/reference.html",
+  "@id": "https://hvwaldow.github.io/git-novice-hvw/reference.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Git Cheatsheets for Quick Reference",
   "creativeWorkStatus": "active",
-  "url": "https://swcarpentry.github.io/git-novice/reference.html",
-  "identifier": "https://swcarpentry.github.io/git-novice/reference.html",
-  "dateCreated": "2014-12-04",
-  "dateModified": "2023-05-08",
-  "datePublished": "2025-09-02"
+  "url": "https://hvwaldow.github.io/git-novice-hvw/reference.html",
+  "identifier": "https://hvwaldow.github.io/git-novice-hvw/reference.html",
+  "dateCreated": "2025-09-07",
+  "dateModified": "2025-09-07",
+  "datePublished": "2025-09-07"
 }
 
   </script><script>

@@ -18,7 +18,17 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="swc-logo" alt="Software Carpentry" src="../assets/images/software-logo.svg"></div>
+        <img id="swc-logo" alt="Software Carpentry" src="../assets/images/software-logo.svg"><span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
+            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
+            </a>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
+          </abbr>
+        </span>
+
+      </div>
     </div>
     <div class="selector-container">
       <div id="theme-selector">
@@ -209,7 +219,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-setup.html">2. Setting Up Git</a>
+        <a href="02-setup.html">2. Configure Git</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -438,22 +448,24 @@ What is version control and why should I use it?
 <span class="visually-hidden">Duration: </span>00h 05m
 </td>
 <td>
- 2. <a href="02-setup.html">Setting Up Git</a>
+ 2. <a href="02-setup.html">Configure Git</a>
 </td>
 <td>
-How do I get set up to use Git?
+How do I configure Git before using it for the first time?<br>Where can
+I get help about Git concepts and commands?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>00h 10m
+<span class="visually-hidden">Duration: </span>00h 15m
 </td>
 <td>
  3. <a href="03-create.html">Creating a Repository</a>
 </td>
 <td>
-Where does Git store information?
+Where does Git store information?<br>How to tell what is going on in a
+repository?<br>What defines a Git repository?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>00h 20m
+<span class="visually-hidden">Duration: </span>00h 25m
 </td>
 <td>
  4. <a href="04-changes.html">Tracking Changes</a>
@@ -464,7 +476,7 @@ version control repository?<br>How do I record notes about what changes
 I made and why?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>00h 40m
+<span class="visually-hidden">Duration: </span>00h 45m
 </td>
 <td>
  5. <a href="05-history.html">Exploring History</a>
@@ -474,7 +486,7 @@ How can I identify old versions of files?<br>How do I review my
 changes?<br>How can I recover old versions of files?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>01h 05m
+<span class="visually-hidden">Duration: </span>01h 10m
 </td>
 <td>
  6. <a href="06-ignore.html">Ignoring Things</a>
@@ -483,7 +495,7 @@ changes?<br>How can I recover old versions of files?
 How can I tell Git to ignore files I don’t want to track?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>01h 10m
+<span class="visually-hidden">Duration: </span>01h 15m
 </td>
 <td>
  7. <a href="07-github.html">Remotes in GitHub</a>
@@ -492,7 +504,7 @@ How can I tell Git to ignore files I don’t want to track?
 How do I share my changes with others on the web?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>01h 55m
+<span class="visually-hidden">Duration: </span>02h 00m
 </td>
 <td>
  8. <a href="08-collab.html">Collaborating</a>
@@ -501,7 +513,7 @@ How do I share my changes with others on the web?
 How can I use version control to collaborate with other people?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>02h 20m
+<span class="visually-hidden">Duration: </span>02h 25m
 </td>
 <td>
  9. <a href="09-conflict.html">Conflicts</a>
@@ -510,7 +522,7 @@ How can I use version control to collaborate with other people?
 What do I do when my changes conflict with someone else’s?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>02h 35m
+<span class="visually-hidden">Duration: </span>02h 40m
 </td>
 <td>
 10. <a href="10-open.html">Open Science</a>
@@ -519,7 +531,7 @@ What do I do when my changes conflict with someone else’s?
 How can version control help me make my work more open?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>02h 45m
+<span class="visually-hidden">Duration: </span>02h 50m
 </td>
 <td>
 11. <a href="11-licensing.html">Licensing</a>
@@ -528,7 +540,7 @@ How can version control help me make my work more open?
 What licensing information should I include with my work?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>02h 50m
+<span class="visually-hidden">Duration: </span>02h 55m
 </td>
 <td>
 12. <a href="12-citation.html">Citation</a>
@@ -537,7 +549,7 @@ What licensing information should I include with my work?
 How can I make my work easier to cite?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>02h 52m
+<span class="visually-hidden">Duration: </span>02h 57m
 </td>
 <td>
 13. <a href="13-hosting.html">Hosting</a>
@@ -546,7 +558,7 @@ How can I make my work easier to cite?
 Where should I host my version control repositories?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>03h 02m
+<span class="visually-hidden">Duration: </span>03h 07m
 </td>
 <td>
 14. <a href="14-supplemental-rstudio.html">Supplemental: Using Git from
@@ -556,7 +568,7 @@ RStudio</a>
 How can I use Git with RStudio?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>03h 12m
+<span class="visually-hidden">Duration: </span>03h 17m
 </td>
 <td>
 Finish
@@ -640,7 +652,7 @@ change your working directory to it with:</p>
 	
         | <a href="https://github.com/swcarpentry/git-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/swcarpentry/git-novice/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/swcarpentry/git-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/swcarpentry/git-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:research-data@vonwaldow.ch">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
 
@@ -659,18 +671,18 @@ change your working directory to it with:</p>
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://swcarpentry.github.io/git-novice/instructor/index.html",
+  "@id": "https://hvwaldow.github.io/git-novice-hvw/instructor/index.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Version Control with Git",
   "creativeWorkStatus": "active",
-  "url": "https://swcarpentry.github.io/git-novice/instructor/index.html",
-  "identifier": "https://swcarpentry.github.io/git-novice/instructor/index.html",
-  "dateCreated": "2014-12-04",
-  "dateModified": "2025-09-02",
-  "datePublished": "2025-09-02"
+  "url": "https://hvwaldow.github.io/git-novice-hvw/instructor/index.html",
+  "identifier": "https://hvwaldow.github.io/git-novice-hvw/instructor/index.html",
+  "dateCreated": "2025-09-07",
+  "dateModified": "2025-09-07",
+  "datePublished": "2025-09-07"
 }
 
   </script><script>
