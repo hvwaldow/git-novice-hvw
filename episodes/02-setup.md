@@ -1,95 +1,82 @@
 ---
-title: Setting Up Git
-teaching: 5
+title: Configure Git
+teaching: 10
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Configure `git` the first time it is used on a computer.
+- Configure `git` the first time it is used on your computer.
 - Understand the meaning of the `--global` configuration flag.
+- Know how to look at the Git configuration
+- Know where and how to change the Git configuration.
+- Where to get Git help
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I get set up to use Git?
+- How do I configure Git before using it for the first time?
+- Where can I get help about Git concepts and commands?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When we use Git on a new computer for the first time,
-we need to configure a few things. Below are a few examples
-of configurations we will set as we get started with Git:
+When you use Git on a new computer for the first time, you need to configure a
+few things. Only five of them are really necessary or strongly recommended:
 
-- our name and email address,
-- what our preferred text editor is,
-- and that we want to use these settings globally (i.e. for every project).
+1. Your name
+2. Your email address
+3. Your preferred text editor 
+4. Deal with line endings
+5. Your preferred initial name for a [branch](../learners/reference.md#branch)
+   (explained later)
 
-On a command line, Git commands are written as `git verb options`,
-where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
-Alfredo sets up his new laptop:
+::::::::::::::::::::::::::::::::::::::::: callout
+Git commands usually take the form  
 
-```bash
-$ git config --global user.name "Alfredo Linguini"
-$ git config --global user.email "a.linguini@ratatouille.fr"
-```
+`git subcommand options parameters`
 
-Please use your own name and email address instead of Alfredo's. This user name and email will be associated with your subsequent Git activity,
-which means that any changes pushed to
-[GitHub](https://github.com/),
-[BitBucket](https://bitbucket.org/),
-[GitLab](https://gitlab.com/) or
-another Git host server
-after this lesson will include this information.
+where options and parameters may be optional.
+:::::::::::::::::::::::::::::::::::::::::
 
-For this lesson, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Keeping your email private
-
-If you elect to use a private email address with GitHub, then use GitHub's no-reply email address for the `user.email` value. It looks like `ID+username@users.noreply.github.com`. You can look up your own address in your GitHub [email settings](https://github.com/settings/emails).
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Line Endings
-
-As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd> on your keyboard,
-your computer encodes this input as a character.
-Different operating systems use different character(s) to represent the end of a line.
-(You may also hear these referred to as newlines or line breaks.)
-Because Git uses these characters to compare files,
-it may cause unexpected issues when editing a file on different machines.
-Though it is beyond the scope of this lesson, you can read more about this issue
-[in the Pro Git book](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf).
-
-You can change the way Git recognizes and encodes line endings
-using the `core.autocrlf` command to `git config`.
-The following settings are recommended:
-
-On macOS and Linux:
+## Set your name and email
 
 ```bash
-$ git config --global core.autocrlf input
+$ git config --global user.name "FirstName LastName"
+$ git config --global user.email "myemail@provider.tld"
 ```
+Please use your own name and email address.  
 
-And on Windows:
+**Use the email address you used to register for GitHub or the forge of your choice, because these services use the email address to assign commits to accounts.**
 
-```bash
-$ git config --global core.autocrlf true
-```
+**You can use a fanatasy-name for "Firstname LastName" if you like.**
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::: spoiler
 
-Alfredo also has to set his favorite text editor, following this table:
+### Hidden email address for GitHub
+
+GitHub for one lets you keep your email address private.
+
+- Go to the [email settings](https://github.com/settings/emails) and switch "*Keep my email addresses private*" on.
+- Set your local Git email address to `id+ghusername@users.noreply.github.com` as instructed there.
+
+::::::::::::::::::::::::::::::::::::::::::::
+
+## The editor of choice
+
+Occasionally, Git fires up an editor for you. Choose which one!
+
+~~~bash
+git config --global core.editor "nano"
+~~~
+
+The common denominator for an editor in this course is *nano*. If you are used to and have installed a different text editor, feel free to configure that one.
+
+Examples:
 
 | Editor                                | Configuration command | 
 | :-----------                          | :------------------------------ |
 | Atom                                  | `$ git config --global core.editor "atom --wait"`                      | 
-| nano                                  | `$ git config --global core.editor "nano -w"`                      | 
 | BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`                      | 
 | Sublime Text (Mac)                    | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"`                      | 
 | Sublime Text (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"`                      | 
@@ -97,56 +84,44 @@ Alfredo also has to set his favorite text editor, following this table:
 | Notepad (Win)                         | `$ git config --global core.editor "c:/Windows/System32/notepad.exe"`                      | 
 | Notepad++ (Win, 32-bit install)       | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`                      | 
 | Notepad++ (Win, 64-bit install)       | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`                      | 
-| Kate (Linux)                          | `$ git config --global core.editor "kate"`                      | 
 | Gedit (Linux)                         | `$ git config --global core.editor "gedit --wait --new-window"`                      | 
-| Scratch (Linux)                       | `$ git config --global core.editor "scratch-text-editor"`                      | 
 | Emacs                                 | `$ git config --global core.editor "emacs"`                      | 
 | Vim                                   | `$ git config --global core.editor "vim"`                      | 
 | VS Code                               | `$ git config --global core.editor "code --wait"`                      | 
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+## Homogeneous line endings
 
-## Exiting Vim
+Line endings (pressing  <kbd>Enter</kbd> or <kbd>↵</kbd> or <kbd>Return</kbd>) are encoded differently in Windows than in other operating systems.
 
-Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
-If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and press <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.
+Because comparing files and figuring out if and how they differ is an important thing for Git, we want to avoid different line-endings when Windows users collaborate with non-Windows users.
 
+Configure Git to do all necessary conversions automagically:
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+### On MacOS or Linux
 
-Git (2.28+) allows configuration of the name of the branch created when you
-initialize any new repository.  Alfredo decides to use that feature to set it to `main` so
-it matches the cloud service he will eventually use.
+~~~bash
+git config --global core.autocrlf input
+~~~
+### On Windows
 
-```bash
-$ git config --global init.defaultBranch main
-```
-
-:::::::::::::::::::::::::::::::::::::::::  callout
+~~~bash
+git config --global core.autocrlf true
+~~~
 
 ## Default Git branch naming
 
-Source file changes are associated with a "branch."
-For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.  
-By default, Git will create a branch called `master`
-when you create a new repository with `git init` (as explained in the next Episode). This term evokes
-the racist practice of human slavery and the
-[software development community](https://github.com/github/renaming)  has moved to adopt
-more inclusive language.
+A *branch* in Git refers to a specific sequence of changes, a line of development. For new learners in this lesson, it's enough to know that branches exist and have names. By default, Git will create a branch called `master`
+when you create a new repository with `git init` (as explained in the next Episode).
 
-In 2020, most Git code hosting services transitioned to using `main` as the default
-branch. As an example, any new repository that is opened in GitHub and GitLab default
-to `main`.  However, Git has not yet made the same change.  As a result, local repositories
-must be manually configured have the same main branch name as most cloud services.
+However, the majority of large software projects and also major code forges such as GitHub, GitLab.com and codeberg.org have changed this default name for the first branch to "*main*", because the "master/slave" terminology is considered offensive and antiquated today.
 
-For versions of Git prior to 2.28, the change can be made on an individual repository level.  The
-command for this is in the next episode.  Note that if this value is unset in your local Git
-configuration, the `init.defaultBranch` value defaults to `master`.
+Change your default branch name to "*main*" to avoid unnecessary friction:
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+~~~bash
+$ git config --global init.defaultBranch main
+~~~
 
 The five commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
@@ -170,28 +145,6 @@ This can be done as many times as you want.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Proxy
-
-In some networks you need to use a
-[proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
-may also need to tell Git about the proxy:
-
-```bash
-$ git config --global http.proxy proxy-url
-$ git config --global https.proxy proxy-url
-```
-
-To disable the proxy, use
-
-```bash
-$ git config --global --unset http.proxy
-$ git config --global --unset https.proxy
-```
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
 ## Git Help and Manual
 
 Always remember that if you forget the subcommands or options of a `git` command, you can access the
@@ -211,10 +164,12 @@ More generally, you can get the list of available `git` commands and further res
 $ git help
 ```
 
+Descriptions from the Git reference documentation are very often overwhelming, because of the many options, parameters, dense language, rich and confusing terminology.
+
+- **Search for "EXAMPLES" in the manual for a command (type `/examples`)**.
+- **Look in the [Git Pro Book](https://git-scm.com/book/en/v2)**
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
