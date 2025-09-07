@@ -13,6 +13,9 @@ title: 'Git Cheatsheets for Quick Reference'
 
 ## Glossary
 
+[branch]{#branch}
+:  A sequence of [commits](#commit).
+
 [changeset]{#changeset}
 :   A group of changes to one or more files that are or will be added
 to a single [commit](#commit) in a [version control](#version-control)
@@ -48,9 +51,7 @@ Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 in such way that both can be kept in sync exchanging [commits](#commit).
 
 [repository]{#repository}
-:   A storage area where a [version control](#version-control) system
-stores the full history of [commits](#commit) of a project and information
-about who changed what, when.
+:   The directory-tree that keeps your project's files and the Git database.
 
 [resolve]{#resolve}
 :   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
