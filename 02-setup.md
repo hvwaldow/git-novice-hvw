@@ -10,7 +10,7 @@ exercises: 0
 - Understand the meaning of the `--global` configuration flag.
 - Know how to look at the Git configuration
 - Know where and how to change the Git configuration.
-- Where to get Git help
+- Know where to get Git help
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -171,9 +171,27 @@ Descriptions from the Git reference documentation are very often overwhelming, b
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::::: challenge
+
+The command to create a new empty Git repository is `git init` (more on that later).
+
+What exactly is the command to create a new empty Git repository where name of the initial branch is "*my_initial_branch*" instead of "*main*"?
+
+::::::::::::::::::::::::::::::: solution
+
+Both `git init -h` and `git init --help` will tell you that the command is
+
+~~~bash
+$ git init --initial-branch my_initial_branch
+~~~
+::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine.
+
+- Use `git <subcommand> -h` or `git <subcommnd> --help` to get information about that subcommand.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
