@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring History</h1>
-        <p>Last updated on 2025-01-10 |
+        <p>Last updated on 2025-09-08 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -694,20 +694,14 @@ overwrite the working copy with the last committed version:</p>
 </div>
 <p>It’s important to remember that we must use the commit number that
 identifies the state of the repository <em>before</em> the change we’re
-trying to undo. A common mistake is to use the number of the commit in
-which we made the change we’re trying to discard. In the example below,
-we want to retrieve the state from before the most recent commit
+trying to undo. In other words, we refer to the commit that created the
+desired state.</p>
+<p>A common mistake is to use the number of the commit in which we made
+the change we’re trying to discard. In the example below, we want to
+retrieve the state from before the most recent commit
 (<code>HEAD~1</code>), which is commit <code>f22b25e</code>. We use the
 <code>.</code> to mean all files:</p>
-<figure><img src="fig/git-restore.svg" alt="A diagram showing how git restore can be used to restore the previous version of two files" class="figure mx-auto d-block"></figure><p>So, to put it all together, here’s how Git works in cartoon form:</p>
-<figure><img src="fig/git_staging.svg" alt="A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout" class="figure mx-auto d-block"><div class="figcaption"><a href="https://figshare.com/articles/How_Git_works_a_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How_Git_works_a_cartoon/1328266</a></div>
-</figure><p>The fact that files can be reverted one by one tends to change the
-way people organize their work. If everything is in one large document,
-it’s hard (but not impossible) to undo changes to the introduction
-without also undoing changes made later to the conclusion. If the
-introduction and conclusion are stored in separate files, on the other
-hand, moving backward and forward in time becomes much easier.</p>
-<div id="recovering-older-versions-of-a-file" class="callout challenge">
+<figure><img src="fig/git-restore.svg" alt="A diagram showing how git restore can be used to restore the previous version of two files" class="figure mx-auto d-block"></figure><div id="recovering-older-versions-of-a-file" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -720,7 +714,7 @@ working on for weeks, and the modifications she made this morning
 “broke” the script and it no longer runs. She has spent ~ 1hr trying to
 fix it, with no luck…</p>
 <p>Luckily, she has been keeping track of her project’s versions using
-Git! Which commands below will let her recover the last committed
+Git. Which commands below will let her recover the last committed
 version of her Python script called <code>data_cruncher.py</code>?</p>
 <ol style="list-style-type: decimal"><li><p><code>$ git restore</code></p></li>
 <li><p><code>$ git restore data_cruncher.py</code></p></li>
@@ -735,7 +729,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>restore</code> command restores files from the repository,
@@ -760,19 +754,19 @@ If you want to restore all files you should use
 </div>
 <span class="callout-header">Challenge</span>
 <div id="reverting-a-commit" class="callout-inner">
-<h3 class="callout-title">Reverting a Commit</h3>
+<h3 class="callout-title">Reverting a commit</h3>
 <div class="callout-content">
 <p>Jennifer is collaborating with colleagues on her Python script. She
 realizes her last commit to the project’s repository contained an error,
 and wants to undo it. Jennifer wants to undo correctly so everyone in
 the project’s repository gets the correct change. The command
-<code>git revert [erroneous commit ID]</code> will create a new commit
-that reverses the erroneous commit.</p>
+<code>git revert &lt;erroneous commit ID&gt;</code> will create a new
+commit that reverses the erroneous commit.</p>
 <p>The command <code>git revert</code> is different from
-<code>git restore -s [commit ID] .</code> because
-<code>git restore</code> returns the files not yet committed within the
-local repository to a previous state, whereas <code>git revert</code>
-reverses changes committed to the local and project repositories.</p>
+<code>git restore -s &lt;commit ID&gt; .</code> because
+<code>git restore</code> overwrites the current file in your working
+directory, whereas <code>git revert</code> creates and applies a new
+commit that reverses the changes of a specific commit.</p>
 <p>Below are the right steps and explanations for Jennifer to use
 <code>git revert</code>, what is the missing command?</p>
 <ol style="list-style-type: decimal"><li><p><code>________ # Look at the git history of the project to find the commit ID</code></p></li>
@@ -789,7 +783,7 @@ e.g. 0b1d055).</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -797,6 +791,40 @@ IDs.</p>
 latest commit, and lists the commit ID; however, Jennifer should
 double-check it is the correct commit, and no one else has committed
 changes to the repository.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="revert-citrus-fruits" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="revert-citrus-fruits" class="callout-inner">
+<h3 class="callout-title">Revert citrus fruits</h3>
+<div class="callout-content">
+<p>Convice yourself that the last commit in <code>recipes</code>
+resulted in “lime” insted of “lemon”.<br>
+There is a tariff-induced lime shortage now.</p>
+<p>Revert that <em>last</em> commit without copying a commit id and
+without dealing with the commit message. Consult
+<code>git revert -h</code> to find out how to do the latter. Do it with
+one command.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git revert <span class="at">--no-edit</span> HEAD</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -810,16 +838,16 @@ changes to the repository.</p>
 <h3 class="callout-title">Understanding Workflow and History</h3>
 <div class="callout-content">
 <p>What is the output of the last command in</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> cd recipes</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"I like tomatoes, therefore I like ketchup"</span> <span class="op">&gt;</span> ketchup.md</span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="ex">$</span> git add ketchup.md</span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"ketchup enhances pasta dishes"</span> <span class="op">&gt;&gt;</span> ketchup.md</span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"My opinions about the red sauce"</span></span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="ex">$</span> git restore ketchup.md</span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="ex">$</span> cat ketchup.md <span class="co"># this will print the content of ketchup.md on screen</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> cd recipes</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"I like tomatoes, therefore I like ketchup"</span> <span class="op">&gt;</span> ketchup.md</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="ex">$</span> git add ketchup.md</span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"ketchup enhances pasta dishes"</span> <span class="op">&gt;&gt;</span> ketchup.md</span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"My opinions about the red sauce"</span></span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="ex">$</span> git restore ketchup.md</span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="ex">$</span> cat ketchup.md <span class="co"># this will print the content of ketchup.md on screen</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -845,12 +873,12 @@ changes to the repository.</p>
 </ol></div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The changes to the file from the second <code>echo</code> command are
@@ -910,12 +938,12 @@ change.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>After adding a change, <code>git restore</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -935,16 +963,16 @@ committed it.</p>
 give an error, but it does not restore the file either. Git helpfully
 tells us that we need to use <code>git restore --staged</code> first to
 unstage the file:</p>
-<div class="codewrapper sourceCode" id="cb32">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">--staged</span> guacamole.md</span></code></pre>
-</div>
-<p>Now, <code>git status</code> gives us:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git restore <span class="at">--staged</span> guacamole.md</span></code></pre>
+</div>
+<p>Now, <code>git status</code> gives us:</p>
+<div class="codewrapper sourceCode" id="cb34">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -959,11 +987,11 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
 <p>This means we can now use <code>git restore</code> to restore the
 file to the previous commit:</p>
-<div class="codewrapper sourceCode" id="cb35">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git restore guacamole.md</span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> git restore guacamole.md</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -993,28 +1021,28 @@ long list appeared. How can you narrow down the search?</p>
 <p>Recall that the <code>git diff</code> command allows us to explore
 one specific file, e.g., <code>git diff guacamole.md</code>. We can
 apply a similar idea here.</p>
-<div class="codewrapper sourceCode" id="cb37">
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git log guacamole.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git log guacamole.md</span></code></pre>
 </div>
 <p>Unfortunately some of these commit messages are very ambiguous, e.g.,
 <code>update files</code>. How can you search through these files?</p>
 <p>Both <code>git diff</code> and <code>git log</code> are very useful
 and they summarize a different part of the history for you. Is it
 possible to combine both? Let’s try the following:</p>
-<div class="codewrapper sourceCode" id="cb38">
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> guacamole.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> guacamole.md</span></code></pre>
 </div>
 <p>You should get a long list of output, and you should be able to see
 both commit messages and the difference between each commit.</p>
 <p>Question: What does the following command do?</p>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.md</span></code></pre>
 </div>
 </div>
 </div>
@@ -1030,6 +1058,8 @@ both commit messages and the difference between each commit.</p>
 <code>git diff</code> displays differences between commits.</li>
 <li>
 <code>git restore</code> recovers old versions of files.</li>
+<li>
+<code>git revert</code> applies “undo commits”</li>
 </ul></div>
 </div>
 </div>
@@ -1094,7 +1124,7 @@ both commit messages and the difference between each commit.</p>
   "url": "https://hvwaldow.github.io/git-novice-hvw/05-history.html",
   "identifier": "https://hvwaldow.github.io/git-novice-hvw/05-history.html",
   "dateCreated": "2025-09-07",
-  "dateModified": "2025-01-10",
+  "dateModified": "2025-09-08",
   "datePublished": "2025-09-08"
 }
 
