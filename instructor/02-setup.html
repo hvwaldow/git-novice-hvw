@@ -401,7 +401,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Configure Git</h1>
-        <p>Last updated on 2025-09-07 |
+        <p>Last updated on 2025-09-08 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/02-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -437,7 +437,7 @@ computer.</li>
 flag.</li>
 <li>Know how to look at the Git configuration</li>
 <li>Know where and how to change the Git configuration.</li>
-<li>Where to get Git help</li>
+<li>Know where to get Git help</li>
 </ul></div>
 </div>
 </div>
@@ -480,12 +480,9 @@ like.</strong></p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  Hidden email address for GitHub
-  </h3>
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hidden email address for GitHub </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>GitHub for one lets you keep your email address private.</p>
 <ul><li>Go to the <a href="https://github.com/settings/emails" class="external-link">email
@@ -639,6 +636,40 @@ Book</a></strong></li>
 </ul></div>
 </div>
 </div>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>The command to create a new empty Git repository is
+<code>git init</code> (more on that later).</p>
+<p>What exactly is the command to create a new empty Git repository
+where name of the initial branch is “<em>my_initial_branch</em>” instead
+of “<em>main</em>”?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Both <code>git init -h</code> and <code>git init --help</code> will
+tell you that the command is</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git init <span class="at">--initial-branch</span> my_initial_branch</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -646,9 +677,12 @@ Book</a></strong></li>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Use <code>git config</code> with the <code>--global</code> option to
-configure a user name, email address, editor, and other preferences once
-per machine.</li>
+<ul><li><p>Use <code>git config</code> with the <code>--global</code> option
+to configure a user name, email address, editor, and other preferences
+once per machine.</p></li>
+<li><p>Use <code>git &lt;subcommand&gt; -h</code> or
+<code>git &lt;subcommnd&gt; --help</code> to get information about that
+subcommand.</p></li>
 </ul></div>
 </div>
 </div>
@@ -710,8 +744,8 @@ per machine.</li>
   "url": "https://hvwaldow.github.io/git-novice-hvw/instructor/02-setup.html",
   "identifier": "https://hvwaldow.github.io/git-novice-hvw/instructor/02-setup.html",
   "dateCreated": "2025-09-07",
-  "dateModified": "2025-09-07",
-  "datePublished": "2025-09-07"
+  "dateModified": "2025-09-08",
+  "datePublished": "2025-09-08"
 }
 
   </script><script>
