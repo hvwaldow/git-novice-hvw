@@ -273,28 +273,15 @@ $ cat guacamole.md
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
-*before* the change we're trying to undo.
-A common mistake is to use the number of
-the commit in which we made the change we're trying to discard.
-In the example below, we want to retrieve the state from before the most
-recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all files:
+*before* the change we're trying to undo. In other words, we refer to the commit that created the desired state.
+
+A common mistake is to use the number of the commit in which we made the change
+we're trying to discard. In the example below, we want to retrieve the state
+from before the most recent commit (`HEAD~1`), which is commit `f22b25e`. We use
+the `.` to mean all files:
 
 ![](fig/git-restore.svg){alt='A diagram showing how git restore can be used to restore the previous version of two files'}
 
-So, to put it all together,
-here's how Git works in cartoon form:
-
-![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg){alt='A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout'}
-
-
-The fact that files can be reverted one by one
-tends to change the way people organize their work.
-If everything is in one large document,
-it's hard (but not impossible) to undo changes to the introduction
-without also undoing changes made later to the conclusion.
-If the introduction and conclusion are stored in separate files,
-on the other hand,
-moving backward and forward in time becomes much easier.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -304,7 +291,7 @@ Jennifer has made changes to the Python script that she has been working on for 
 modifications she made this morning "broke" the script and it no longer runs. She has spent
 \~ 1hr trying to fix it, with no luck...
 
-Luckily, she has been keeping track of her project's versions using Git! Which commands below will
+Luckily, she has been keeping track of her project's versions using Git. Which commands below will
 let her recover the last committed version of her Python script called
 `data_cruncher.py`?
 
@@ -343,18 +330,17 @@ you should use `git restore .`
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reverting a Commit
+## Reverting a commit
 
 Jennifer is collaborating with colleagues on her Python script.  She
 realizes her last commit to the project's repository contained an error, and
 wants to undo it.  Jennifer wants to undo correctly so everyone in the project's
-repository gets the correct change. The command `git revert [erroneous commit ID]` will create a
+repository gets the correct change. The command `git revert <erroneous commit ID>` will create a
 new commit that reverses the erroneous commit.
 
 The command `git revert` is
-different from `git restore -s [commit ID] .` because `git restore` returns the
-files not yet committed within the local repository to a previous state, whereas `git revert`
-reverses changes committed to the local and project repositories.
+different from `git restore -s <commit ID> .` because `git restore` overwrites the current file in your working directory, whereas `git revert` creates and applies a new commit that 
+reverses the changes of a specific commit.
 
 Below are the right steps and explanations for Jennifer to use `git revert`,
 what is the missing command?
@@ -371,18 +357,31 @@ what is the missing command?
 
 :::::::::::::::  solution
 
-## Solution
-
 The command `git log` lists project history with commit IDs.
 
 The command `git show HEAD` shows changes made at the latest commit, and lists
 the commit ID; however, Jennifer should double-check it is the correct commit, and no one
 else has committed changes to the repository.
 
-
-
 :::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::::: challenge
+
+### Revert citrus fruits 
+
+Convice yourself that the last commit in `recipes` resulted in "lime" insted of "lemon".  
+There is a tariff-induced lime shortage now.
+
+Revert that *last* commit without copying a commit id and without dealing with the commit message. Consult `git revert -h` to find out how to do the latter. Do it with one command.
+
+:::::::::::::::  solution
+
+~~~bash
+$ git revert --no-edit HEAD
+~~~
+
+:::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -571,5 +570,6 @@ $ git log --patch HEAD~9 *.md
 
 - `git diff` displays differences between commits.
 - `git restore` recovers old versions of files.
+- `git revert` applies "undo commits"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
