@@ -237,7 +237,7 @@
         <ul><li><a href="#initialization">Initialization</a></li>
 <li><a href="#the-git-database">The Git database</a></li>
 <li><a href="#status-of-a-git-repository">Status of a Git repository</a></li>
-<li><a href="#get-a-git-repository-from-somewhere-else">Get a Git repository from somewhere else</a></li>
+<li><a href="#clone-a-git-repository">Clone a Git repository</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -401,7 +401,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating a Repository</h1>
-        <p>Last updated on 2025-09-07 |
+        <p>Last updated on 2025-09-08 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -459,7 +459,7 @@ store versions of our files:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre>
 </div>
 <p>It is important to note that <code>git init</code> will create a
-repository that can include subdirectories and their files—there is no
+repository that can inclde subdirectories and their files—there is no
 need to create separate repositories nested within the
 <code>recipes</code> repository, whether subdirectories are present from
 the beginning or added later. Also, note that the creation of the
@@ -554,11 +554,30 @@ not in a Git repository.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="get-a-git-repository-from-somewhere-else">Get a Git repository from somewhere else<a class="anchor" aria-label="anchor" href="#get-a-git-repository-from-somewhere-else"></a></h2>
+</section><section><h2 class="section-heading" id="clone-a-git-repository">Clone a Git repository<a class="anchor" aria-label="anchor" href="#clone-a-git-repository"></a></h2>
 <hr class="half-width"><p>It is very common to copy a repository from somewhere else to your
 computer to work with it. GitHub is still the most prominet place for
 shared Git repositories world-wide, and fortunately hosts repositories
 containing recipes that are freely accessible, e.g. here:<br><a href="https://github.com/cr-workshop-exercises/recipe-book.git" class="external-link uri">https://github.com/cr-workshop-exercises/recipe-book.git</a></p>
+<p>The second possibility to get a Git repository is to <em>clone</em>
+an existing one. This creates a local copy of the whole repository with
+all its history.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> cd ..</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/cr-workshop-exercises/recipe-book.git</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="ex">$</span> cd recipe-book</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-al</span></span></code></pre>
+</div>
+<p>To get an idea how the history of a repository can look after some
+development, look at its history:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git log</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--graph</span> <span class="at">--oneline</span></span></code></pre>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -631,7 +650,7 @@ directory.</li>
   "url": "https://hvwaldow.github.io/git-novice-hvw/03-create.html",
   "identifier": "https://hvwaldow.github.io/git-novice-hvw/03-create.html",
   "dateCreated": "2025-09-07",
-  "dateModified": "2025-09-07",
+  "dateModified": "2025-09-08",
   "datePublished": "2025-09-08"
 }
 

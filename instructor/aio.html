@@ -595,7 +595,7 @@ changes?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>Recovering the excellent version is only possible if you created
@@ -969,7 +969,7 @@ subcommand.</p></li>
 </div>
 </section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Creating a Repository</a></p>
 <hr>
-<p>Last updated on 2025-09-07 |
+<p>Last updated on 2025-09-08 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1028,7 +1028,7 @@ store versions of our files:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre>
 </div>
 <p>It is important to note that <code>git init</code> will create a
-repository that can include subdirectories and their files—there is no
+repository that can inclde subdirectories and their files—there is no
 need to create separate repositories nested within the
 <code>recipes</code> repository, whether subdirectories are present from
 the beginning or added later. Also, note that the creation of the
@@ -1127,13 +1127,32 @@ not in a Git repository.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="get-a-git-repository-from-somewhere-else">Get a Git repository from somewhere else<a class="anchor" aria-label="anchor" href="#get-a-git-repository-from-somewhere-else"></a>
+</section><section><h2 class="section-heading" id="clone-a-git-repository">Clone a Git repository<a class="anchor" aria-label="anchor" href="#clone-a-git-repository"></a>
 </h2>
 <hr class="half-width">
 <p>It is very common to copy a repository from somewhere else to your
 computer to work with it. GitHub is still the most prominet place for
 shared Git repositories world-wide, and fortunately hosts repositories
 containing recipes that are freely accessible, e.g. here:<br><a href="https://github.com/cr-workshop-exercises/recipe-book.git" class="external-link uri">https://github.com/cr-workshop-exercises/recipe-book.git</a></p>
+<p>The second possibility to get a Git repository is to <em>clone</em>
+an existing one. This creates a local copy of the whole repository with
+all its history.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> cd ..</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/cr-workshop-exercises/recipe-book.git</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="ex">$</span> cd recipe-book</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-al</span></span></code></pre>
+</div>
+<p>To get an idea how the history of a repository can look after some
+development, look at its history:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git log</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--graph</span> <span class="at">--oneline</span></span></code></pre>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1152,7 +1171,7 @@ directory.</li>
 </div>
 </section></section><section id="aio-04-changes"><p>Content from <a href="04-changes.html">Tracking Changes</a></p>
 <hr>
-<p>Last updated on 2025-05-19 |
+<p>Last updated on 2025-09-08 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -1227,9 +1246,11 @@ lesson.</p>
 </button>
 <div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<p>Jimmy and Alfredo are using <a href="https://en.wikipedia.org/wiki/Markdown" class="external-link">Markdown</a> to write
-their recipes. It is a simple plain-text format for writing lists, links
-and other things that might go into a web page.</p>
+<p><a href="https://commonmark.org/help/tutorial/index.html" class="external-link">Markdown</a> is
+frequently used to write plain text documents that can contain still
+very human-readable markup to render sections, lists, font styles (bold,
+italic, typewriter), quotes, and more in many formats such as HTML or
+PDF.</p>
 <table class="table">
 <colgroup>
 <col width="44%">
@@ -1617,7 +1638,8 @@ first. Let’s fix that:</p>
 <p>Git insists that we add files to the set we want to commit before
 actually committing anything. This allows us to commit our changes in
 stages and capture changes in logical portions rather than only large
-batches. For example, suppose we’re adding a few citations to relevant
+batches.</p>
+<p>For example, suppose we’re adding a few citations to relevant
 research to our thesis. We might want to commit those additions, and the
 corresponding bibliography entries, but <em>not</em> commit some of our
 work drafting the conclusion (which we haven’t finished yet).</p>
@@ -1635,16 +1657,13 @@ keeps track of things that have been added to the current <a href="reference.htm
 project, <code>git add</code> specifies <em>what</em> will go in a
 snapshot (putting things in the staging area), and
 <code>git commit</code> then <em>actually takes</em> the snapshot, and
-makes a permanent record of it (as a commit). If you don’t have anything
-staged when you type <code>git commit</code>, Git will prompt you to use
-<code>git commit -a</code> or <code>git commit --all</code>, which is
-kind of like gathering <em>everyone</em> to take a group photo! However,
-it’s almost always better to explicitly add things to the staging area,
-because you might commit changes you forgot you made. (Going back to the
-group photo simile, you might get an extra with incomplete makeup
-walking on the stage for the picture because you used <code>-a</code>!)
-Try to stage things manually, or you might find yourself searching for
-“git undo commit” more than you would like!</p>
+makes a permanent record of it (as a commit).</p>
+<p>If you don’t have anything staged when you type
+<code>git commit</code>, Git will as you to do that first.</p>
+<p>Either explicitely, using <code>git add &lt;filename(s)&gt;</code>,
+or by <strong>a</strong>dding and committing in one go all files that
+were modified (and are already tracked), using
+<code>git commit -a</code></p>
 </div>
 </div>
 </div>
@@ -1803,11 +1822,15 @@ size of your screen. When this “pager” is called, you will notice that
 the last line in your screen is a <code>:</code>, instead of your usual
 prompt.</p>
 <ul>
-<li>To get out of the pager, press <kbd>Q</kbd>.</li>
-<li>To move to the next page, press <kbd>Spacebar</kbd>.</li>
-<li>To search for <code>some_word</code> in all pages, press
-<kbd>/</kbd> and type <code>some_word</code>. Navigate through matches
-pressing <kbd>N</kbd>.</li>
+<li><p>To get out of the pager, press <kbd>Q</kbd>.</p></li>
+<li><p>To move to the next page, press <kbd>Spacebar</kbd>.</p></li>
+<li><p>To search for <code>some_word</code> in all pages, press
+<kbd>/</kbd> and type <code>some_word</code>.</p></li>
+<li>
+<p>To search backwads for <code>some_word</code>, press
+<kbd>?</kbd>.</p>
+<p>Navigate through matches pressing <kbd>N</kbd>.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -3043,7 +3066,7 @@ nothing to commit, working tree clean</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>If you only want to ignore the contents of
 <code>pictures/cake</code>, you can change your <code>.gitignore</code>
@@ -3084,7 +3107,7 @@ directory except for <code>final.png</code>? Hint: Find out what
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You would add the following two lines to your .gitignore:</p>
 <div class="codewrapper">
@@ -3133,7 +3156,7 @@ not <code>pictures/pie</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>If you want to ignore the contents of <code>pictures/</code> but not
 those of <code>pictures/pie/</code>, you can change your
@@ -3181,7 +3204,7 @@ ignore all <code>.dat</code> files in
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Appending <code>pictures/data/location/gps/*.dat</code> will match
 every file in <code>pictures/data/location/gps</code> that ends with
@@ -3220,7 +3243,7 @@ listing the names of the corresponding folders?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In the <code>.gitignore</code> file, write:</p>
 <div class="codewrapper">
@@ -3259,7 +3282,7 @@ exception with the exclamation point operator.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>The <code>!</code> modifier will negate an entry from a previously
 defined ignore pattern. Because the <code>!*.csv</code> entry negates
@@ -3303,7 +3326,7 @@ via <code>.gitignore</code>.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>append either <code>log_*</code> or <code>log*</code> as a new entry
@@ -4264,7 +4287,7 @@ has changed with command line? And on GitHub?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4764,7 +4787,7 @@ non-textual file that is stored in version control?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Alfredo takes a picture of its guacamole and
 calls it <code>guacamole.jpg</code>.</p>
@@ -5008,7 +5031,7 @@ started.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5239,7 +5262,7 @@ project and explain why.</p>
   Useful Resource
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Confused by the sheer number of different repositories you could
 choose for your data? This <a href="https://zenodo.org/records/11105430" class="external-link">repository selection
