@@ -50,9 +50,10 @@ Save the file and exit your editor.
 
 ## Markdown
 
-Jimmy and Alfredo are using [Markdown](https://en.wikipedia.org/wiki/Markdown)
-to write their recipes. It is a simple plain-text format for writing lists,
-links and other things that might go into a web page.
+[Markdown](https://commonmark.org/help/tutorial/index.html) is frequently used to write
+plain text documents that can contain still very human-readable markup to render
+sections, lists, font styles (bold, italic, typewriter), quotes, and more in
+many formats such as HTML or PDF.
 
 +---------------------------------------+------------------------------------------------+
 | Markdown code                         | Rendered output                                |
@@ -354,15 +355,13 @@ $ git commit -m "Add ingredients for basic guacamole"
  1 file changed, 3 insertions(+)
 ```
 
-Git insists that we add files to the set we want to commit
-before actually committing anything. This allows us to commit our
-changes in stages and capture changes in logical portions rather than
-only large batches.
-For example,
-suppose we're adding a few citations to relevant research to our thesis.
-We might want to commit those additions,
-and the corresponding bibliography entries,
-but *not* commit some of our work drafting the conclusion
+Git insists that we add files to the set we want to commit before actually
+committing anything. This allows us to commit our changes in stages and capture
+changes in logical portions rather than only large batches.
+
+For example, suppose we're adding a few citations to relevant research to our
+thesis. We might want to commit those additions, and the corresponding
+bibliography entries, but *not* commit some of our work drafting the conclusion
 (which we haven't finished yet).
 
 To allow for this,
@@ -380,18 +379,13 @@ If you think of Git as taking snapshots of changes over the life of a project,
 (putting things in the staging area),
 and `git commit` then *actually takes* the snapshot, and
 makes a permanent record of it (as a commit).
-If you don't have anything staged when you type `git commit`,
-Git will prompt you to use `git commit -a` or `git commit --all`,
-which is kind of like gathering *everyone* to take a group photo!
-However, it's almost always better to
-explicitly add things to the staging area, because you might
-commit changes you forgot you made. (Going back to the group photo simile,
-you might get an extra with incomplete makeup walking on
-the stage for the picture because you used `-a`!)
-Try to stage things manually,
-or you might find yourself searching for "git undo commit" more
-than you would like!
 
+If you don't have anything staged when you type `git commit`,
+Git will as you to do that first.
+
+Either explicitely, using `git add <filename(s)>`, or by **a**dding and
+committing in one go all files that were modified (and are already tracked),
+using `git commit -a`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -550,6 +544,8 @@ screen is a `:`, instead of your usual prompt.
 - To search for `some_word` in all pages,
   press <kbd>/</kbd>
   and type `some_word`.
+- To search backwads for `some_word`, press <kbd>?</kbd>.
+
   Navigate through matches pressing <kbd>N</kbd>.
   
 
