@@ -304,9 +304,7 @@ How do you ignore all the `.csv` files, without explicitly listing the names of 
 
 In the `.gitignore` file, write:
 
-```output
-*.csv
-```
+`*.csv`
 
 This will ignore all the `.csv` files, regardless of their position in the directory tree.
 You can still include some specific exception with the exclamation point operator.
