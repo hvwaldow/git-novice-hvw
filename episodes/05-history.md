@@ -62,7 +62,9 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d*uh*]), we can look at the commit before `HEAD`.
+The real power of `git diff` lies in its ability to compare with previous
+commits. For example, by adding `~1` (where "~" is "tilde", pronounced
+[**til**\-d*uh*]), we can look at the commit before `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
@@ -571,5 +573,4 @@ $ git log --patch HEAD~9 *.md
 - `git diff` displays differences between commits.
 - `git restore` recovers old versions of files.
 - `git revert` applies "undo commits"
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
