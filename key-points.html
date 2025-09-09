@@ -304,7 +304,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-ignore.html">6. Ignoring Things</a>
+        <a href="06-undo.html">6. Undoing Things</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -316,7 +316,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-github.html">7. Remotes in GitHub</a>
+        <a href="07-ignore.html">7. Ignoring Things</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -328,7 +328,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08-collab.html">8. Collaborating</a>
+        <a href="08-github.html">8. Remotes in GitHub</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -340,7 +340,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="09-conflict.html">9. Conflicts</a>
+        <a href="09-collab.html">9. Collaborating</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -352,55 +352,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open.html">10. Open Science</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush12">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading12">
-        <a href="11-licensing.html">11. Licensing</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush13">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading13">
-        <a href="12-citation.html">12. Citation</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush14">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading14">
-        <a href="13-hosting.html">13. Hosting</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush15">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading15">
-        <a href="14-supplemental-rstudio.html">14. Supplemental: Using Git from RStudio</a>
+        <a href="10-conflict.html">10. Conflicts</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -508,14 +460,24 @@ the local repository.</li>
 <code>git restore</code> recovers old versions of files.</li>
 <li>
 <code>git revert</code> applies “undo commits”</li>
-</ul></section><section id="06-ignore"><h2 class="section-heading"><a href="06-ignore.html">Ignoring Things</a></h2>
+</ul></section><section id="06-undo"><h2 class="section-heading"><a href="06-undo.html">Undoing Things</a></h2>
+<hr class="half-width">
+<ul>
+<li>
+<code>git reset</code> rewrites history. Use with care! Don’t change
+shared history!<br>
+</li>
+<li>
+<code>git restore</code> lets you update working tree or staging
+area to arbitrary commits (versions) of files or directory trees.</li>
+</ul></section><section id="07-ignore"><h2 class="section-heading"><a href="07-ignore.html">Ignoring Things</a></h2>
 <hr class="half-width">
 <ul>
 <li>The .gitignore file is a text file that tells Git which files to
 track and which to ignore in the repository.</li>
 <li>You can list specific files or folders to be ignored by Git, or you
 can include files that would normally be ignored.</li>
-</ul></section><section id="07-github"><h2 class="section-heading"><a href="07-github.html">Remotes in GitHub</a></h2>
+</ul></section><section id="08-github"><h2 class="section-heading"><a href="08-github.html">Remotes in GitHub</a></h2>
 <hr class="half-width">
 <ul>
 <li>A local Git repository can be connected to one or more remote
@@ -527,14 +489,14 @@ remote repository.</li>
 <li>
 <code>git pull</code> copies changes from a remote repository to a
 local repository.</li>
-</ul></section><section id="08-collab"><h2 class="section-heading"><a href="08-collab.html">Collaborating</a></h2>
+</ul></section><section id="09-collab"><h2 class="section-heading"><a href="09-collab.html">Collaborating</a></h2>
 <hr class="half-width">
 <ul>
 <li>
 <code>git clone</code> copies a remote repository to create a local
 repository with a remote called <code>origin</code> automatically set
 up.</li>
-</ul></section><section id="09-conflict"><h2 class="section-heading"><a href="09-conflict.html">Conflicts</a></h2>
+</ul></section><section id="10-conflict"><h2 class="section-heading"><a href="10-conflict.html">Conflicts</a></h2>
 <hr class="half-width">
 <ul>
 <li>Conflicts occur when two or more people change the same lines of the
@@ -542,43 +504,6 @@ same file.</li>
 <li>The version control system does not allow people to overwrite each
 other’s changes blindly, but highlights conflicts so that they can be
 resolved.</li>
-</ul></section><section id="10-open"><h2 class="section-heading"><a href="10-open.html">Open Science</a></h2>
-<hr class="half-width">
-<ul>
-<li>Open scientific work is more useful and more highly cited than
-closed.</li>
-</ul></section><section id="11-licensing"><h2 class="section-heading"><a href="11-licensing.html">Licensing</a></h2>
-<hr class="half-width">
-<ul>
-<li>The <code>LICENSE</code>, <code>LICENSE.md</code>, or
-<code>LICENSE.txt</code> file is often used in a repository to indicate
-how the contents of the repo may be used by others.</li>
-<li>People who incorporate General Public License (GPL’d) software into
-their own software must make the derived software also open under the
-GPL license if they decide to share it; most other open licenses do not
-require this.</li>
-<li>The Creative Commons family of licenses allow people to mix and
-match requirements and restrictions on attribution, creation of
-derivative works, further sharing, and commercialization.</li>
-<li>People who are not lawyers should not try to write licenses from
-scratch.</li>
-</ul></section><section id="12-citation"><h2 class="section-heading"><a href="12-citation.html">Citation</a></h2>
-<hr class="half-width">
-<ul>
-<li>Add a CITATION file to a repository to explain how you want your
-work cited.</li>
-</ul></section><section id="13-hosting"><h2 class="section-heading"><a href="13-hosting.html">Hosting</a></h2>
-<hr class="half-width">
-<ul>
-<li>Projects can be hosted on university servers, on personal domains,
-or on a public hosting service.</li>
-<li>Rules regarding intellectual property and storage of sensitive
-information apply no matter where code and data are hosted.</li>
-</ul></section><section id="14-supplemental-rstudio"><h2 class="section-heading"><a href="14-supplemental-rstudio.html">Supplemental: Using Git from RStudio</a></h2>
-<hr class="half-width">
-<ul>
-<li>Using RStudio’s Git integration allows you to version control a
-project over time.</li>
 </ul></section>
 </div>
     </main>

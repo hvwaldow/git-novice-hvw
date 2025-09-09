@@ -118,11 +118,11 @@
   Version Control with Git
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 13%" class="percentage">
-    13%
+<aside class="col-md-12 lesson-progress"><div style="width: 15%" class="percentage">
+    15%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: 13%" aria-valuenow="13" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" style="width: 15%" aria-valuenow="15" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -255,7 +255,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-ignore.html">6. Ignoring Things</a>
+        <a href="06-undo.html">6. Undoing Things</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -264,7 +264,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-github.html">7. Remotes in GitHub</a>
+        <a href="07-ignore.html">7. Ignoring Things</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -273,7 +273,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08-collab.html">8. Collaborating</a>
+        <a href="08-github.html">8. Remotes in GitHub</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -282,7 +282,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="09-conflict.html">9. Conflicts</a>
+        <a href="09-collab.html">9. Collaborating</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -291,43 +291,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="10-open.html">10. Open Science</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush12">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading12">
-        <a href="11-licensing.html">11. Licensing</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush13">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading13">
-        <a href="12-citation.html">12. Citation</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush14">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading14">
-        <a href="13-hosting.html">13. Hosting</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush15">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading15">
-        <a href="14-supplemental-rstudio.html">14. Supplemental: Using Git from RStudio</a>
+        <a href="10-conflict.html">10. Conflicts</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -391,7 +355,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Tracking Changes</h1>
-        <p>Last updated on 2025-09-08 |
+        <p>Last updated on 2025-09-09 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -467,7 +431,7 @@ lesson.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Markdown </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p><a href="https://commonmark.org/help/tutorial/index.html" class="external-link">Markdown</a> is
 frequently used to write plain text documents that can contain still
@@ -642,13 +606,22 @@ what we did and why. If we just run <code>git commit</code> without the
 <code>-m</code> option, Git will launch <code>nano</code> (or whatever
 other editor we configured as <code>core.editor</code>) so that we can
 write a longer message.</p>
-<p><a href="https://chris.beams.io/posts/git-commit/" class="external-link">Good commit
-messages</a> start with a brief (&lt;50 characters) statement about the
-changes made in the commit. Generally, the message should complete the
-sentence “If applied, this commit will” <commit message here>. If you
-want to go into more detail, add a blank line between the summary line
-and your additional notes. Use this additional space to explain why you
-made changes and/or what their impact will be.</commit></p>
+<div id="commit-messages" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="commit-messages" class="callout-inner">
+<h3 class="callout-title">Commit messages</h3>
+<div class="callout-content">
+<p>Write <a href="https://martijnhols.nl/blog/how-to-write-a-good-git-commit-message" class="external-link">good
+commit messages</a>: A brief (&lt;80 characters) statement about the
+changes made in the commit. Use the imperative mood. Don’t repeat what
+can be seen in the diff. If you want to provide more context, add a
+blank line between the summary line and your additional notes.</p>
+</div>
+</div>
+</div>
 <p>If we run <code>git status</code> now:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1149,7 +1122,7 @@ the last commit made to <code>guacamole.md</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -1199,7 +1172,7 @@ imperative.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Would only create a commit if files have already been staged.</li>
 <li>Would try to create a new repository.</li>
@@ -1235,7 +1208,7 @@ changes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>First we make our changes to the <code>guacamole.md</code> and
 <code>groceries.md</code> files:</p>
@@ -1325,7 +1298,7 @@ state.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>recipes</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb68">
@@ -1363,6 +1336,44 @@ state, use <code>git diff</code>:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb72-1"><a href="#cb72-1" tabindex="-1"></a><span class="ex">$</span> git diff me.txt</span></code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div id="change-staged-files" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="change-staged-files" class="callout-inner">
+<h3 class="callout-title">Change staged files</h3>
+<div class="callout-content">
+<ul><li>Create a new file <code>pizza.md</code> containing your favorite
+topping.</li>
+<li>Stage it.</li>
+</ul><p>Before commiting it, you remember a second topping you can’t do
+without. Edit <code>pizza.md</code> accordingly.</p>
+<p>What do you have to do now, to arrive at a commit that contains the
+up-to-date <code>pizza.md</code> with two toppings?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div class="accordion-body">
+<p>It is necessary to stage the changed file <strong>again</strong>:</p>
+<div class="codewrapper sourceCode" id="cb73">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb73-1"><a href="#cb73-1" tabindex="-1"></a><span class="ex">$</span> git add pizza.md</span></code></pre>
+</div>
+<p>before committing. The staging area holds the version of the file
+that was <em>added</em>. It doesn’t get automatically updated when you
+change the file in the working tree.</p>
 </div>
 </div>
 </div>
@@ -1449,7 +1460,7 @@ the local repository.</li>
   "url": "https://hvwaldow.github.io/git-novice-hvw/instructor/04-changes.html",
   "identifier": "https://hvwaldow.github.io/git-novice-hvw/instructor/04-changes.html",
   "dateCreated": "2025-09-07",
-  "dateModified": "2025-09-08",
+  "dateModified": "2025-09-09",
   "datePublished": "2025-09-09"
 }
 
