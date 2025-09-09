@@ -32,6 +32,35 @@ world. To this end we are going to create a *remote* repository that will be lin
 
 ## 1\. Create a remote repository
 
+::::::::::::::::::::::::::::::: callout
+
+## Forges
+
+Saas offer such as [GitHub](https://github.com),
+[Codeberg](https://codeberg.org) [GitLab.com](https://gitlab.com/),
+[BitBucket](https://bitbucket.org/product/),
+[sourcehut](https://sourcehut.org/), [SourceForge](https://sourceforge.net)
+cater mostly to software developers and provide a central platform to manage Git
+(or other VCS) repositories. They all have a different set of features
+additional to Git, that help with project management, community organization,
+CI/CD, ... These features are different for each platform.
+
++ There are commercial ones, such as GitHub and non-profit ones, such as Codeberg.
++ There are some based on proprietary code, such as GitHub, and some that are
+  based on Open Source software, that can be deployed by everybody, such as GitLab
+  and Codeberg (with [Forgejo](https://forgejo.org/)).
++ There are really many GitLab instances all over the academic landscape, you
+  surely have access to one.
++ The most successful one and the one that gives you most exposure is also the
+  one used by most large Open Source projects and the one that puts you at the
+  grace of company with a highly unethical track-record that currently sucks up
+  to a fascist regime.
+  
+  In the following we are using GitHub as an example anyway. You should be able
+  with little effort to transfer this to any other common forge.
+
+:::::::::::::::::::::::::::::::::
+
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `recipes`:
 
@@ -100,15 +129,11 @@ Copy that URL from the browser, go into the local `recipes` repository, and run
 this command:
 
 ```bash
-$ git remote add origin git@github.com:alflin/recipes.git
+$ git remote add origin git@github.com:<username>/recipes.git
 ```
 
-Make sure to use the URL for your repository rather than Alfredo's: the only
-difference should be your username instead of `alflin`.
-
 `origin` is a local name used to refer to the remote repository. It could be called
-anything, but `origin` is a convention that is often used by default in git
-and GitHub, so it's helpful to stick with this unless there's a reason not to.
+anything, but `origin` is a convention that is often used by default in Git.
 
 We can check that the command has worked by running `git remote -v`:
 
@@ -117,8 +142,8 @@ $ git remote -v
 ```
 
 ```output
-origin   git@github.com:alflin/recipes.git (fetch)
-origin   git@github.com:alflin/recipes.git (push)
+origin   git@github.com:<user>/recipes.git (fetch)
+origin   git@github.com:<user>/recipes.git (push)
 ```
 
 We'll discuss remotes in more detail in the next episode, while
@@ -166,19 +191,22 @@ If they don't exist yet, set them up like so:
 
 ### 3\.1 Create an SSH key pair
 
-To create an SSH key pair Alfredo uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Alfredo's email):
+Create an SSH key pair, loke so, where the `-t` option specifies which type of algorithm to use.
 
 ```bash
 $ ssh-keygen -t ed25519
 ```
 
 If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
-`$ ssh-keygen -t rsa -b 4096
 
-```output
+~~~bash
+$ ssh-keygen -t rsa -b 4096
+~~~
+
+~~~output
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/c/Users/<username>/.ssh/id_ed25519):
-```
+~~~
 
 We want to use the default file, so just press <kbd>Enter</kbd>.
 
@@ -187,21 +215,24 @@ Created directory '/c/Users/<user>/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Alfredo for a passphrase. Since he is using his kitchen's laptop that other people sometimes have access to, he wants to create a passphrase. Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
-Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
-This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
+In the real word, it is strongly recommended to secure your key with a
+passphrase. It prevents anyone getting physical or remote access to you machine
+from automatically also controlling your account at the forge.
+
+Here, we leave the passphrase empty though, for efficiency:   
+Just hit <kbd>Enter</kbd>.
 
 ```output
 Enter same passphrase again:
 ```
 
-After entering the same passphrase a second time, we receive the confirmation
+And <kbd>Enter</kbd> again.
 
 ```output
-Your identification has been saved in /c/Users/Alfredo/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Alfredo/.ssh/id_ed25519.pub
+Your identification has been saved in /c/Users/<username>/.ssh/id_ed25519
+Your public key has been saved in /c/Users/<username>/.ssh/id_ed25519.pub
 The key fingerprint is:
-SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o a.linguini@ratatouille.fr
+SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o yourusername@yourhostname
 The key's randomart image is:
 +--[ED25519 256]--+
 |^B== o.          |
@@ -216,8 +247,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-The "identification" is actually the private key. You should never share it.  The public key is appropriately named.  The "key fingerprint"
-is a shorter version of a public key.
+The "identification" is actually the private key. You should never share it.  The public key is appropriately named.
 
 Now that we have generated the SSH keys, we will find the SSH files when we check.
 
@@ -262,10 +292,12 @@ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI a.linguini@ratatouille.fr
 ```
 
-Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click "Settings", then on the
-settings page, click "SSH and GPG keys", on the left side "Access" menu. Click the "New SSH key" button on the right side. Now,
-you can add the title (Alfredo uses the title "Alfredo's Kitchen Laptop" so he can remember where the original key pair
-files are located), paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
+Now, going to GitHub.com, click on your profile icon in the top right corner to
+get the drop-down menu. Click "Settings", then on the settings page, click "SSH
+and GPG keys", on the left side "Access" menu. Click the "New SSH key" button on
+the right side. Now, you can add a title (something that helps you identify the
+machine, where the private key is), paste your SSH key into the field, and click
+the "Add SSH key" to complete the setup.
 
 Now that we've set that up, let's check our authentication again from the command line.
 
@@ -274,7 +306,7 @@ $ ssh -T git@github.com
 ```
 
 ```output
-Hi Alfredo! You've successfully authenticated, but GitHub does not provide shell access.
+Hi \<User\>! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
@@ -285,11 +317,11 @@ Now that authentication is setup, we can return to the remote.  This command wil
 our local repository to the repository on GitHub:
 
 ```bash
-$ git push origin main
+$ git push -u origin main
 ```
 
-Since Alfredo set up a passphrase, it will prompt him for it.  If you completed advanced settings for your authentication, it
-will not prompt for a passphrase.
+The parameter `-u` or `--set-upstream` sets remote the branch as defualt for
+future `git push` and `git pull`.
 
 ```output
 Enumerating objects: 16, done.
@@ -356,28 +388,13 @@ Our local and remote repositories are now in this state:
 
 ![](fig/github-repo-after-first-push.svg){alt='A diagram showing how "git push origin" will push changes from the local repository to the remote, making the remote repository an exact copy of the local repository.'}
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## The '-u' Flag
-
-You may see a `-u` option used with `git push` in some documentation.  This
-option is synonymous with the `--set-upstream-to` option for the `git branch`
-command, and is used to associate the current branch with a remote branch so
-that the `git pull` command can be used without any arguments. To do this,
-simply use `git push -u origin main` once the remote has been set up.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 We can pull changes from the remote repository to the local one as well:
 
 ```bash
-$ git pull origin main
+$ git pull
 ```
 
 ```output
-From https://github.com/alflin/recipes
- * branch            main     -> FETCH_HEAD
 Already up-to-date.
 ```
 

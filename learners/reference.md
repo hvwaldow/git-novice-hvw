@@ -43,8 +43,11 @@ on the World Wide Web.
 Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 
 [remote]{#remote}
-:   (of a repository) A version control [repository](#repository) connected to another,
-in such way that both can be kept in sync exchanging [commits](#commit).
+:   A Git [repository](#repository) in a "remote" location, that is connected to
+a "local" one. They can be kept in sync by synchronizing their Git databases.
+Often this remote repository actualy resides on a remote server reached through
+the internet, but it can also be just another repository on the same laptop
+computer.
 
 [repository]{#repository}
 :   The directory-tree that keeps your project's files and the Git database.
