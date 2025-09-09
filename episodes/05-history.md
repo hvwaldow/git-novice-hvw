@@ -584,4 +584,5 @@ $ git log --patch HEAD~9 *.md
 - `git diff` displays differences between commits.
 - `git restore` recovers old versions of files.
 - `git revert` applies "undo commits"
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
