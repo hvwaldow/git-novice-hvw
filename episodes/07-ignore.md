@@ -19,12 +19,12 @@ exercises: 0
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor
-or intermediate files created during data analysis?
+or intermediate files created during data analysis, files containing secrets?
 Let's create a few dummy files:
 
 ```bash
-$ mkdir pictures
-$ touch a.png b.png c.png pictures/cake1.jpg pictures/cake2.jpg
+$ mkdir tmp
+$ touch password.txt a.png b.png tmp/cake1.jpg tmp/cake2.jpg
 ```
 
 and see what Git says:
@@ -37,19 +37,14 @@ $ git status
 On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
-	a.png
-	b.png
-	c.png
-	pictures/
+        a.png        b.png        password.txt tmp/
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Putting these files under version control would be a waste of disk space.
-What's worse,
-having them all listed could distract us from changes that actually matter,
-so let's tell Git to ignore them.
+Putting these files under version control would be a waste of disk space. Having
+them all listed could distract us from changes that actually matter, so let's
+tell Git to ignore them.
 
 We do this by creating a file in the root directory of our project called `.gitignore`:
 
@@ -73,14 +68,14 @@ $ cat .gitignore
 ```
 
 ```output
-*.png
-pictures/
+password.txt  
+*.png  
+tmp/  
 ```
 
-These patterns tell Git to ignore any file whose name ends in `.png`
-and everything in the `pictures` directory.
-(If any of these files were already being tracked,
-Git would continue to track them.)
+These patterns tell Git to ignore any file whose name is `password.txt`, ends in
+`.png` and everything in the `tmp` directory. (If any of these files were
+already being tracked, Git would continue to track them.)
 
 Once we have created this file,
 the output of `git status` is much cleaner:
@@ -107,7 +102,7 @@ Let's add and commit `.gitignore`:
 
 ```bash
 $ git add .gitignore
-$ git commit -m "Ignore png files and the pictures folder."
+$ git commit -m "ignore password.txt, png files and the tmp folder."
 $ git status
 ```
 
@@ -140,12 +135,8 @@ $ git status --ignored
 ```output
 On branch main
 Ignored files:
- (use "git add -f <file>..." to include in what will be committed)
-
-        a.png
-        b.png
-        c.png
-        pictures/
+  (use "git add -f <file>..." to include in what will be committed)
+        a.png        b.png        password.txt tmp/
 
 nothing to commit, working tree clean
 ```
@@ -314,7 +305,7 @@ How do you ignore all the `.csv` files, without explicitly listing the names of 
 In the `.gitignore` file, write:
 
 ```output
-**/*.csv
+*.csv
 ```
 
 This will ignore all the `.csv` files, regardless of their position in the directory tree.
