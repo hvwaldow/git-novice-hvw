@@ -264,6 +264,8 @@ What are some of the benefits of using version control, Git and GitHub?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
++ `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
++ `git pull` syncs the local repository (really the [branch](../learners/reference.md#branch)) with the local one ("pulls remote changes")
++ `git push` sync the remote repository (really the [branch](../learners/reference.md#branch))  with the local one ("pushes local changes to remote").
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
