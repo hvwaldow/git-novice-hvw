@@ -6,7 +6,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what conflicts are and when they can occur.
+- Know what conflicts are and when they can occur.
 - Resolve conflicts resulting from a merge.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -384,8 +384,8 @@ that is stored in version control?
 
 ## Solution
 
-Let's try it. Suppose Alfredo takes a picture of its guacamole and
-calls it `guacamole.jpg`.
+Let's try it. Suppose you take a picture of the  guacamole and
+call it `guacamole.jpg`.
 
 If you do not have an image file of guacamole available, you can create
 a dummy binary file like this:
@@ -402,22 +402,22 @@ $ ls -lh guacamole.jpg
 `ls` shows us that this created a 1-kilobyte file. It is full of
 random bytes read from the special file, `/dev/urandom`.
 
-Now, suppose Alfredo adds `guacamole.jpg` to his repository:
+Now, suppose you add `guacamole.jpg` to your repository:
 
 ```bash
 $ git add guacamole.jpg
 $ git commit -m "Add picture of guacamole"
 ```
-
+ 
 ```output
 [main 8e4115c] Add picture of guacamole
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 guacamole.jpg
 ```
 
-Suppose that Jimmy has added a similar picture in the meantime.
+Suppose that your collaborator has added a similar picture in the meantime.
 Theirs is a picture of a guacamole with nachos, but it is *also* called `guacamole.jpg`.
-When Alfredo tries to push, he gets a familiar message:
+When you try to push, you get a familiar message:
 
 ```bash
 $ git push origin main
@@ -470,7 +470,7 @@ for text files. So, instead of editing the image file, we must check out
 the version we want to keep. Then we can add and commit this version.
 
 On the key line above, Git has conveniently given us commit identifiers
-for the two versions of `guacamole.jpg`. Our version is `HEAD`, and Jimmy's
+for the two versions of `guacamole.jpg`. Our version is `HEAD`, and the other
 version is `439dc8c0...`. If we want to use our version, we can use
 `git checkout`:
 
@@ -484,7 +484,7 @@ $ git commit -m "Use image of just guacamole instead of with nachos"
 [main 21032c3] Use image of just guacamole instead of with nachos
 ```
 
-If instead we want to use Jimmy's version, we can use `git checkout` with
+If instead we want to use the other version, we can use `git checkout` with
 Jimmy's commit identifier, `439dc8c0`:
 
 ```bash
@@ -492,6 +492,12 @@ $ git checkout 439dc8c0 guacamole.jpg
 $ git add guacamole.jpg
 $ git commit -m "Use image of guacamole with nachos instead of just guacamole"
 ```
+::::::::::::::::::::::: challenge
+
+What command could we have used instead of `git checkout` (in both cases)?
+
+:::::::::::::::::::::::
+
 
 ```output
 [main da21b34] Use image of guacamole with nachos instead of just guacamole
