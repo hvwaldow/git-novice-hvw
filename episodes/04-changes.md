@@ -847,7 +847,33 @@ $ git diff me.txt
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::  challenge
 
+## Change staged files
+
++ Create a new file `pizza.md` containing your favorite topping. 
++ Stage it.
+
+Before commiting it, you remember a second topping you can't do without. Edit
+`pizza.md` accordingly.
+
+What do you have to do now, to arrive at a commit that contains the up-to-date
+`pizza.md` with two toppings?
+
+:::::::::::::::::::::: solution
+
+It is necessary to stage the changed file **again**:
+
+~~~bash
+$ git add pizza.md
+~~~
+
+before committing. The staging area holds the version of the file that was
+*added*. It doesn't get automatically updated when you change the file in the
+working tree.
+
+::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::
 
 [commit-messages]: https://martijnhols.nl/blog/how-to-write-a-good-git-commit-message
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
