@@ -22,11 +22,7 @@ to a single [commit](#commit) in a [version control](#version-control)
 [repository](#repository).
 
 [commit]{#commit}
-:   To record the current state of a set of files (a [changeset](#changeset))
-in a [version control](#version-control) [repository](#repository). As a noun,
-the result of committing, i.e. a recorded changeset in a repository.
-If a commit contains changes to multiple files,
-all of the changes are recorded together.
+:   A snapshot of the directory-tree that contains the project. It is saved in the Git database.
 
 [conflict]{#conflict}
 :   A change made by one user of a [version control system](#version-control)
