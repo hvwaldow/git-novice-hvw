@@ -190,9 +190,16 @@ If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured as `core.editor`)
 so that we can write a longer message.
 
-[Good commit messages][commit-messages] start with a brief (\<50 characters) statement about the
-changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
-If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
+
+## Commit messages
+
+Write [good commit messages][commit-messages]: A brief (\<80 characters) statement
+about the changes made in the commit. Use the imperative mood. Don't repeat what
+can be seen in the diff. If you want to provide more context, add a blank line
+between the summary line and your additional notes.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 If we run `git status` now:
 
@@ -840,9 +847,35 @@ $ git diff me.txt
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::  challenge
 
+## Change staged files
 
-[commit-messages]: https://chris.beams.io/posts/git-commit/
++ Create a new file `pizza.md` containing your favorite topping. 
++ Stage it.
+
+Before commiting it, you remember a second topping you can't do without. Edit
+`pizza.md` accordingly.
+
+What do you have to do now, to arrive at a commit that contains the up-to-date
+`pizza.md` with two toppings?
+
+:::::::::::::::::::::: solution
+
+It is necessary to stage the changed file **again**:
+
+~~~bash
+$ git add pizza.md
+~~~
+
+before committing. The staging area holds the version of the file that was
+*added*. It doesn't get automatically updated when you change the file in the
+working tree.
+
+::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::
+
+[commit-messages]: https://martijnhols.nl/blog/how-to-write-a-good-git-commit-message
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
 

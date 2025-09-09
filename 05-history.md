@@ -25,6 +25,17 @@ As we saw in the previous episode, we can refer to commits by their
 identifiers.  You can refer to the *most recent commit* of the working
 directory by using the identifier `HEAD`.
 
+:::::::::::::::::::::::::::::::::::::: callout
+
+## HEAD
+
++ The symbol `HEAD` points to the latest commit in the current [branch](../learners/reference.md#branch).
++ It is the "status quo" of your commit-history.
++ It is the parent of the next commit.
++ It is "where you currently are" as far as Git is concerned.
+
+::::::::::::::::::::::::::::::::::::::
+
 We've been adding small changes at a time to `guacamole.md`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
 let's make a change to `guacamole.md`, adding yet another line.
@@ -62,7 +73,9 @@ index b36abfd..0848c8d 100644
 +An ill-considered change
 ```
 
-Note that `HEAD` is the default option for `git diff`, so omitting it will not change the command's output at all (give it a try). However, the real power of `git diff` lies in its ability to compare with previous commits. For example, by adding `~1` (where "~" is "tilde", pronounced [**til**\-d*uh*]), we can look at the commit before `HEAD`.
+The real power of `git diff` lies in its ability to compare with previous
+commits. For example, by adding `~1` (where "~" is "tilde", pronounced
+[**til**\-d*uh*]), we can look at the commit before `HEAD`.
 
 ```bash
 $ git diff HEAD~1 guacamole.md
