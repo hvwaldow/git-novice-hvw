@@ -126,67 +126,64 @@ talking about how they might be used for collaboration.
 
 ## 3\. SSH Background and Setup
 
-Before Alfredo can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
+Before you can connect to a remote repository, you need to set up a way for you
+computer to authenticate with GitHub so it knows it's you trying to connect to
+your remote repository.
 
-We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.
+We are going to set up the method that is commonly used by many different services.  This method is called Secure Shell Protocol (SSH).  SSH is an extremely popular and versatile network protocol that allows secure communication between computers.
 
-SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. Very descriptive names.
+SSH uses a *key pair*. This is two keys that work together to validate access. One key is publicly known and called the *public key*, and the other key called the *private key* is kept private.
 
 You can think of the public key as a padlock, and only you have the key (the private key) to open it. You use the public key where you want a secure method of communication, such as your GitHub account.  You give this padlock, or public key, to GitHub and say "lock the communications to my account with this so that only computers that have my private key can unlock communications and send git commands as my GitHub account."
 
-What we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account.
+We now do the minimum required to set up the SSH keys and add the public key to a GitHub account.
 
-The first thing we are going to do is check if this has already been done on the computer you're on.  Because generally speaking, this setup only needs to happen once and then you can forget about it.
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Keeping your keys secure
-
-You shouldn't really forget about your SSH keys, since they keep your account secure. It's good
-practice to check your SSH keys every so often to ensure they are still secure, up to date, 
-and that there are no unauthorized keys that could compromise your account.
-This is especially important if you are using multiple computers to access your account.
+First we check if this has already been done on the computer you're on. Because
+generally speaking, this setup only needs to happen once and then you can forget
+about it.
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-We will run the list command to check what key pairs already exist on your computer.
+Check what key pairs already exist on your computer:
 
 ```bash
 $ ls -al ~/.ssh
 ```
 
-Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.
+Your output is going to look a little different depending on whether or not SSH
+has ever been set up on the computer you are using.
 
-Alfredo has not set up SSH on his computer, so his output is
+If you have not set up SSH on you computer, the output will be something like that:
 
 ```output
-ls: cannot access '/c/Users/Alfredo/.ssh': No such file or directory
+ls: cannot access '/c/Users/<username>/.ssh': No such file or directory
 ```
 
-If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.
-Since they don't exist on Alfredo's computer, he uses this command to create them.
+If SSH has been set up on the computer you're using, the public and private key
+pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or
+`id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.
+
+If they don't exist yet, set them up like so:
 
 ### 3\.1 Create an SSH key pair
 
 To create an SSH key pair Alfredo uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Alfredo's email):
 
 ```bash
-$ ssh-keygen -t ed25519 -C "a.linguini@ratatouille.fr"
+$ ssh-keygen -t ed25519
 ```
 
 If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
-`$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+`$ ssh-keygen -t rsa -b 4096
 
 ```output
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/c/Users/Alfredo/.ssh/id_ed25519):
+Enter file in which to save the key (/c/Users/<username>/.ssh/id_ed25519):
 ```
 
 We want to use the default file, so just press <kbd>Enter</kbd>.
 
 ```output
-Created directory '/c/Users/Alfredo/.ssh'.
+Created directory '/c/Users/<user>/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
