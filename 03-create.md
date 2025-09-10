@@ -103,6 +103,7 @@ Without creating a new directory or leaving `recipes`, figure out what `git stat
 ## Solution
 
 ~~~bash
+
 $ rm -rf .git   #remove .git
 $ git status
 ~~~
