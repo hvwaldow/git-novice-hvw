@@ -40,7 +40,7 @@ $ git init
 ```
 
 It is important to note that `git init` will create a repository that
-can include subdirectories and their files---there is no need to create
+can inclde subdirectories and their files---there is no need to create
 separate repositories nested within the `recipes` repository, whether
 subdirectories are present from the beginning or added later. Also, note
 that the creation of the `recipes` directory and its initialization as a
@@ -114,11 +114,26 @@ fatal: not a git repository (or any of the parent directories): .git
 ::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::
 
-## Get a Git repository from somewhere else
+## Clone a Git repository
 
 It is very common to copy a repository from somewhere else to your computer to work with it. GitHub is still the most prominet place for shared Git repositories world-wide, and fortunately hosts repositories containing recipes that are freely accessible, e.g. here:  
 https://github.com/cr-workshop-exercises/recipe-book.git
 
+The second possibility to get a Git repository is to *clone* an existing one. This creates a local copy of the whole repository with all its history.
+
+~~~bash
+$ cd ..
+$ git clone https://github.com/cr-workshop-exercises/recipe-book.git
+$ cd recipe-book
+$ ls -al
+~~~
+
+To get an idea how the history of a repository can look after some development, look at its history:
+
+~~~bash
+$ git log
+$ git log --graph --oneline
+~~~
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

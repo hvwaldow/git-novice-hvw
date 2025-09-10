@@ -50,9 +50,10 @@ Save the file and exit your editor.
 
 ## Markdown
 
-Jimmy and Alfredo are using [Markdown](https://en.wikipedia.org/wiki/Markdown)
-to write their recipes. It is a simple plain-text format for writing lists,
-links and other things that might go into a web page.
+[Markdown](https://commonmark.org/help/tutorial/index.html) is frequently used to write
+plain text documents that can contain still very human-readable markup to render
+sections, lists, font styles (bold, italic, typewriter), quotes, and more in
+many formats such as HTML or PDF.
 
 +---------------------------------------+------------------------------------------------+
 | Markdown code                         | Rendered output                                |
@@ -189,9 +190,16 @@ If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured as `core.editor`)
 so that we can write a longer message.
 
-[Good commit messages][commit-messages] start with a brief (\<50 characters) statement about the
-changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
-If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
+
+## Commit messages
+
+Write [good commit messages][commit-messages]: A brief (\<80 characters) statement
+about the changes made in the commit. Use the imperative mood. Don't repeat what
+can be seen in the diff. If you want to provide more context, add a blank line
+between the summary line and your additional notes.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 If we run `git status` now:
 
@@ -354,15 +362,13 @@ $ git commit -m "Add ingredients for basic guacamole"
  1 file changed, 3 insertions(+)
 ```
 
-Git insists that we add files to the set we want to commit
-before actually committing anything. This allows us to commit our
-changes in stages and capture changes in logical portions rather than
-only large batches.
-For example,
-suppose we're adding a few citations to relevant research to our thesis.
-We might want to commit those additions,
-and the corresponding bibliography entries,
-but *not* commit some of our work drafting the conclusion
+Git insists that we add files to the set we want to commit before actually
+committing anything. This allows us to commit our changes in stages and capture
+changes in logical portions rather than only large batches.
+
+For example, suppose we're adding a few citations to relevant research to our
+thesis. We might want to commit those additions, and the corresponding
+bibliography entries, but *not* commit some of our work drafting the conclusion
 (which we haven't finished yet).
 
 To allow for this,
@@ -380,18 +386,13 @@ If you think of Git as taking snapshots of changes over the life of a project,
 (putting things in the staging area),
 and `git commit` then *actually takes* the snapshot, and
 makes a permanent record of it (as a commit).
-If you don't have anything staged when you type `git commit`,
-Git will prompt you to use `git commit -a` or `git commit --all`,
-which is kind of like gathering *everyone* to take a group photo!
-However, it's almost always better to
-explicitly add things to the staging area, because you might
-commit changes you forgot you made. (Going back to the group photo simile,
-you might get an extra with incomplete makeup walking on
-the stage for the picture because you used `-a`!)
-Try to stage things manually,
-or you might find yourself searching for "git undo commit" more
-than you would like!
 
+If you don't have anything staged when you type `git commit`,
+Git will as you to do that first.
+
+Either explicitely, using `git add <filename(s)>`, or by **a**dding and
+committing in one go all files that were modified (and are already tracked),
+using `git commit -a`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -550,6 +551,8 @@ screen is a `:`, instead of your usual prompt.
 - To search for `some_word` in all pages,
   press <kbd>/</kbd>
   and type `some_word`.
+- To search backwads for `some_word`, press <kbd>?</kbd>.
+
   Navigate through matches pressing <kbd>N</kbd>.
   
 
@@ -844,9 +847,35 @@ $ git diff me.txt
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::  challenge
 
+## Change staged files
 
-[commit-messages]: https://chris.beams.io/posts/git-commit/
++ Create a new file `pizza.md` containing your favorite topping. 
++ Stage it.
+
+Before commiting it, you remember a second topping you can't do without. Edit
+`pizza.md` accordingly.
+
+What do you have to do now, to arrive at a commit that contains the up-to-date
+`pizza.md` with two toppings?
+
+:::::::::::::::::::::: solution
+
+It is necessary to stage the changed file **again**:
+
+~~~bash
+$ git add pizza.md
+~~~
+
+before committing. The staging area holds the version of the file that was
+*added*. It doesn't get automatically updated when you change the file in the
+working tree.
+
+::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::
+
+[commit-messages]: https://martijnhols.nl/blog/how-to-write-a-good-git-commit-message
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
 
