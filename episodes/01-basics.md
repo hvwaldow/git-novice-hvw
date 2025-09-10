@@ -67,33 +67,74 @@ collaboration among different people.
 
 [A more code oriented take](https://coderefinery.github.io/git-intro/motivation/#)
 
+## Uses other than software development
+
++ scripting
++ all kinds of documents, articles, contracts, documentation, ....
++ websites
++ configuration files
++ password-manager [pass](https://www.passwordstore.org/)
++ all iterative knowledge work (preferably represented in plain text form)
+
+## Ancillary uses
+
++ A simple backup solution
++ Content sharing and synchronization
+
+## About Git
+
+### Where is Git coming from?
+  + Developed initially by Linus Torvald, the creator of Linux, to manage the Linux kernel devlopment (2005).
+  + Linux kernel has currently ~40 million lines of code
+  + There are ~2000 developer contributing to a current release of the kernel
+  
+### Goals of Git
+  + speed
+  + fully distributed
+  + supports non-linear development
+  + supports very large projects
+  
+### Why do you want to use Git?
+  - => This is a professional, powerful, robust and proven tool.
+  - => You won't be blocked by Git not being powerful enough.
+  - => Git makes it very difficult to loose data, **you'll feel comfort through safety.**
+  - => Git is the backbone of the vast majority of Open Source development today.
+  - => With power comes complexity
+    **One main aim of this course: get started with main functionality**
+
+## Concept Basics
+
+### Some terms
+
+- **Repository (repo)**: The directory-tree that keeps your project's files and the Git database
+- **Commit**: A snapshot of your repo at a specific point in time
+- **Branch**: A sequence of commits. A Branch identified by a pointer to the latest commit in that sequence (mostly).
+- **HEAD**: A symbol for a pointer to the branch "you are on" now. The one that is "active".
+- **Working tree**: The directory tree with the files you work on. Almos equal to the repository.
 
 
+### The Trinity
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+[The Staging Area](https://git-scm.com/about/staging-area) is a special Git feature.
 
-## The Long History of Version Control Systems
+Your files can be in three states:
 
-Automated version control systems are nothing new.
-Tools like [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), or [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) have been around since the early 1980s and are used by
-many large companies.
-However, many of these are now considered legacy systems (i.e., outdated) due to various
-limitations in their capabilities.
-More modern systems, such as [Git](https://en.wikipedia.org/wiki/Git) and [Mercurial](https://en.wikipedia.org/wiki/Mercurial),
-are *distributed*, meaning that they do not need a centralized server to host the repository.
-These modern systems also include powerful merging tools that make it possible for multiple authors to work on
-the same files concurrently.
+1. modified (just changed in the Working tree)
+2. staged (in the Index="Cache"="staging area"): The changed file is marked for going into the next snapshot(=Commit). The staging are is never empty!
+3. commited : The file is stored in the Git database.
 
-Git was created by Linus Torvalds in 2005 
-as an alternative to BitKeeper, one of the first distributed version control
-systems, to track changes in the Linux kernel.
-Torvalds provided several explanations of the name, of varying degrees of
-politeness, which are enumerated in the 
-[project's README](https://github.com/git/git/blob/master/README.md?plain=1#L55),
-including "Global Information Tacker" for when "you're in a good mood".
+### The Git workflow
 
-For those interested, The Carpentries has a [Version Control with Mercurial](https://swcarpentry.github.io/hg-novice/) lesson (2013-2018), which provides additional context and historical perspective.
-::::::::::::::::::::::::::::::::::::::::::::::::::
+1. Modify your files
+2. Add files that you want in the next commit to the index="staging area"="cache"
+3. Do a Commit : Snapshot what is in the staging area="index="Cache" and store it in the Git database
+
+
+- Everything committed is really hard to loose
+- Everything not commited is really easy to loose
+- => Commit often
+- = >Commit frequency determined by commit messages
+
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
