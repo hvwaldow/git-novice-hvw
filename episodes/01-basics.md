@@ -62,6 +62,14 @@ particular project and their metadata make up a [repository](../learners/referen
 Repositories can be kept in sync across different computers, facilitating
 collaboration among different people.
 
+
+## The Code Refinery Motivation
+
+[A more code oriented take](https://coderefinery.github.io/git-intro/motivation/#)
+
+
+
+
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## The Long History of Version Control Systems
