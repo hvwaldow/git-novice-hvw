@@ -217,6 +217,10 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#the-code-refinery-motivation">The Code Refinery Motivation</a></li>
+<li><a href="#uses-other-than-software-development">Uses other than software development</a></li>
+<li><a href="#ancillary-uses">Ancillary uses</a></li>
+<li><a href="#about-git">About Git</a></li>
+<li><a href="#concept-basics">Concept Basics</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -443,39 +447,89 @@ among different people.</p>
 <section><h2 class="section-heading" id="the-code-refinery-motivation">The Code Refinery Motivation<a class="anchor" aria-label="anchor" href="#the-code-refinery-motivation"></a></h2>
 <hr class="half-width"><p><a href="https://coderefinery.github.io/git-intro/motivation/#" class="external-link">A
 more code oriented take</a></p>
-<div id="the-long-history-of-version-control-systems" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="the-long-history-of-version-control-systems" class="callout-inner">
-<h3 class="callout-title">The Long History of Version Control
-Systems</h3>
-<div class="callout-content">
-<p>Automated version control systems are nothing new. Tools like <a href="https://en.wikipedia.org/wiki/Revision_Control_System" class="external-link">RCS</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_Versions_System" class="external-link">CVS</a>,
-or <a href="https://en.wikipedia.org/wiki/Apache_Subversion" class="external-link">Subversion</a>
-have been around since the early 1980s and are used by many large
-companies. However, many of these are now considered legacy systems
-(i.e., outdated) due to various limitations in their capabilities. More
-modern systems, such as <a href="https://en.wikipedia.org/wiki/Git" class="external-link">Git</a> and <a href="https://en.wikipedia.org/wiki/Mercurial" class="external-link">Mercurial</a>, are
-<em>distributed</em>, meaning that they do not need a centralized server
-to host the repository. These modern systems also include powerful
-merging tools that make it possible for multiple authors to work on the
-same files concurrently.</p>
-<p>Git was created by Linus Torvalds in 2005 as an alternative to
-BitKeeper, one of the first distributed version control systems, to
-track changes in the Linux kernel. Torvalds provided several
-explanations of the name, of varying degrees of politeness, which are
-enumerated in the <a href="https://github.com/git/git/blob/master/README.md?plain=1#L55" class="external-link">project’s
-README</a>, including “Global Information Tacker” for when “you’re in a
-good mood”.</p>
-<p>For those interested, The Carpentries has a <a href="https://swcarpentry.github.io/hg-novice/" class="external-link">Version Control with
-Mercurial</a> lesson (2013-2018), which provides additional context and
-historical perspective.</p>
-</div>
-</div>
-</div>
-<div id="paper-writing" class="callout challenge">
+</section><section><h2 class="section-heading" id="uses-other-than-software-development">Uses other than software development<a class="anchor" aria-label="anchor" href="#uses-other-than-software-development"></a></h2>
+<hr class="half-width"><ul><li>scripting</li>
+<li>all kinds of documents, articles, contracts, documentation, ….</li>
+<li>websites</li>
+<li>configuration files</li>
+<li>password-manager <a href="https://www.passwordstore.org/" class="external-link">pass</a>
+</li>
+<li>all iterative knowledge work (preferably represented in plain text
+form)</li>
+</ul></section><section><h2 class="section-heading" id="ancillary-uses">Ancillary uses<a class="anchor" aria-label="anchor" href="#ancillary-uses"></a></h2>
+<hr class="half-width"><ul><li>A simple backup solution</li>
+<li>Content sharing and synchronization</li>
+</ul></section><section><h2 class="section-heading" id="about-git">About Git<a class="anchor" aria-label="anchor" href="#about-git"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="where-is-git-coming-from">Where is Git coming from?<a class="anchor" aria-label="anchor" href="#where-is-git-coming-from"></a></h3>
+<ul><li>Developed initially by Linus Torvald, the creator of Linux, to
+manage the Linux kernel devlopment (2005).</li>
+<li>Linux kernel has currently ~40 million lines of code</li>
+<li>There are ~2000 developer contributing to a current release of the
+kernel</li>
+</ul></div>
+<div class="section level3">
+<h3 id="goals-of-git">Goals of Git<a class="anchor" aria-label="anchor" href="#goals-of-git"></a></h3>
+<ul><li>speed</li>
+<li>fully distributed</li>
+<li>supports non-linear development</li>
+<li>supports very large projects</li>
+</ul></div>
+<div class="section level3">
+<h3 id="why-do-you-want-to-use-git">Why do you want to use Git?<a class="anchor" aria-label="anchor" href="#why-do-you-want-to-use-git"></a></h3>
+<ul><li>=&gt; This is a professional, powerful, robust and proven tool.</li>
+<li>=&gt; You won’t be blocked by Git not being powerful enough.</li>
+<li>=&gt; Git makes it very difficult to loose data, <strong>you’ll feel
+comfort through safety.</strong>
+</li>
+<li>=&gt; Git is the backbone of the vast majority of Open Source
+development today.</li>
+<li>=&gt; With power comes complexity <strong>One main aim of this
+course: get started with main functionality</strong>
+</li>
+</ul></div>
+</section><section><h2 class="section-heading" id="concept-basics">Concept Basics<a class="anchor" aria-label="anchor" href="#concept-basics"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="some-terms">Some terms<a class="anchor" aria-label="anchor" href="#some-terms"></a></h3>
+<ul><li>
+<strong>Repository (repo)</strong>: The directory-tree that keeps
+your project’s files and the Git database</li>
+<li>
+<strong>Commit</strong>: A snapshot of your repo at a specific point
+in time</li>
+<li>
+<strong>Branch</strong>: A sequence of commits. A Branch identified
+by a pointer to the latest commit in that sequence (mostly).</li>
+<li>
+<strong>HEAD</strong>: A symbol for a pointer to the branch “you are
+on” now. The one that is “active”.</li>
+<li>
+<strong>Working tree</strong>: The directory tree with the files you
+work on. Almos equal to the repository.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="the-trinity">The Trinity<a class="anchor" aria-label="anchor" href="#the-trinity"></a></h3>
+<p><a href="https://git-scm.com/about/staging-area" class="external-link">The Staging Area</a>
+is a special Git feature.</p>
+<p>Your files can be in three states:</p>
+<ol style="list-style-type: decimal"><li>modified (just changed in the Working tree)</li>
+<li>staged (in the Index=“Cache”=“staging area”): The changed file is
+marked for going into the next snapshot(=Commit). The staging are is
+never empty!</li>
+<li>commited : The file is stored in the Git database.</li>
+</ol></div>
+<div class="section level3">
+<h3 id="the-git-workflow">The Git workflow<a class="anchor" aria-label="anchor" href="#the-git-workflow"></a></h3>
+<ol style="list-style-type: decimal"><li>Modify your files</li>
+<li>Add files that you want in the next commit to the index=“staging
+area”=“cache”</li>
+<li>Do a Commit : Snapshot what is in the staging area=“index=”Cache”
+and store it in the Git database</li>
+</ol><ul><li>Everything committed is really hard to loose</li>
+<li>Everything not commited is really easy to loose</li>
+<li>=&gt; Commit often</li>
+<li>= &gt;Commit frequency determined by commit messages</li>
+</ul><div id="paper-writing" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -500,7 +554,7 @@ changes?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li><p>Recovering the excellent version is only possible if you created
 a copy of the old version of the paper. The danger of losing good
@@ -531,6 +585,7 @@ problems.</p></li>
 <ul><li>Version control is like an unlimited ‘undo’.</li>
 <li>Version control also allows many people to work in parallel.</li>
 </ul></div>
+</div>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
