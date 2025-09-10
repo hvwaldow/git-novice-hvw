@@ -206,12 +206,19 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         1. Automated Version Control
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#the-code-refinery-motivation">The Code Refinery Motivation</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -364,7 +371,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Automated Version Control</h1>
-        <p>Last updated on 2025-08-28 |
+        <p>Last updated on 2025-09-10 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/01-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -435,6 +442,9 @@ about them, such as who made the change. The complete history of commits
 for a particular project and their metadata make up a <a href="reference.html#repository">repository</a>. Repositories can be
 kept in sync across different computers, facilitating collaboration
 among different people.</p>
+<section><h2 class="section-heading" id="the-code-refinery-motivation">The Code Refinery Motivation<a class="anchor" aria-label="anchor" href="#the-code-refinery-motivation"></a></h2>
+<hr class="half-width"><p><a href="https://coderefinery.github.io/git-intro/motivation/#" class="external-link">A
+more code oriented take</a></p>
 <div id="the-long-history-of-version-control-systems" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -525,10 +535,7 @@ problems.</p></li>
 </ul></div>
 </div>
 </div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/02-setup.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -586,7 +593,7 @@ problems.</p></li>
   "url": "https://hvwaldow.github.io/git-novice-hvw/instructor/01-basics.html",
   "identifier": "https://hvwaldow.github.io/git-novice-hvw/instructor/01-basics.html",
   "dateCreated": "2025-09-07",
-  "dateModified": "2025-08-28",
+  "dateModified": "2025-09-10",
   "datePublished": "2025-09-10"
 }
 
