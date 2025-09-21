@@ -53,8 +53,8 @@ CI/CD, ... These features are different for each platform.
   surely have access to one.
 + The most successful one and the one that gives you most exposure is also the
   one used by most large Open Source projects and the one that puts you at the
-  grace of company with a highly unethical track-record that currently sucks up
-  to a fascist regime.
+  grace of a company with a questionable ethical track-record that collaborates
+  with an authoritarian regime.
   
   In the following we are using GitHub as an example anyway. You should be able
   with little effort to transfer this to any other common forge.
