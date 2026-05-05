@@ -638,7 +638,7 @@ changes?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>Recovering the excellent version is only possible if you created
@@ -793,56 +793,56 @@ to configure that one.</p>
 <col width="27%">
 <col width="72%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th align="left">Editor</th>
 <th align="left">Configuration command</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">Atom</td>
 <td align="left"><code>$ git config --global core.editor "atom --wait"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">BBEdit (Mac, with command line tools)</td>
 <td align="left"><code>$ git config --global core.editor "bbedit -w"</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Sublime Text (Mac)</td>
 <td align="left"><code>$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Sublime Text (Win, 32-bit install)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Sublime Text (Win, 64-bit install)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Notepad (Win)</td>
 <td align="left"><code>$ git config --global core.editor "c:/Windows/System32/notepad.exe"</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Notepad++ (Win, 32-bit install)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Notepad++ (Win, 64-bit install)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Gedit (Linux)</td>
 <td align="left"><code>$ git config --global core.editor "gedit --wait --new-window"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Emacs</td>
 <td align="left"><code>$ git config --global core.editor "emacs"</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Vim</td>
 <td align="left"><code>$ git config --global core.editor "vim"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">VS Code</td>
 <td align="left"><code>$ git config --global core.editor "code --wait"</code></td>
 </tr>
@@ -1155,7 +1155,7 @@ not in a Git repository.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1290,7 +1290,7 @@ lesson.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Markdown </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p><a href="https://commonmark.org/help/tutorial/index.html" class="external-link">Markdown</a> is
 frequently used to write plain text documents that can contain still
@@ -1302,16 +1302,16 @@ PDF.</p>
 <col width="44%">
 <col width="55%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Markdown code</th>
 <th>Rendered output</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>*   Use asterisks
 *   to create
 *   bullet lists.</code></pre></td>
@@ -1325,11 +1325,11 @@ PDF.</p>
 </ul>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>1.   Use numbers
 1.   to create
 1.   bullet lists.</code></pre></td>
@@ -1343,11 +1343,11 @@ PDF.</p>
 </ol>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code>*  You can use indents
   *  To create sublists
   *  of the same type
@@ -1373,11 +1373,11 @@ PDF.</p>
 </ul>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code><span><span class="co"># A Level-1 Heading</span></span></code></pre></td>
 <td>
 <p>
@@ -1385,11 +1385,11 @@ PDF.</p>
 <h2 id="a-level-1-heading">A Level-1 Heading</h2>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><pre><code><span><span class="co">## A Level-2 Heading (etc.)</span></span></code></pre></td>
 <td>
 <p>
@@ -2031,7 +2031,7 @@ the last commit made to <code>guacamole.md</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -2055,24 +2055,24 @@ imperative.</p>
 <li><div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1" aria-label="code-block-56-1"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1" aria-label="code-block-56-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 <li><div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" tabindex="-1" aria-label="code-block-57-1"></a>   <span class="ex">$</span> git init myfile.txt</span>
-<span id="cb57-2"><a href="#cb57-2" tabindex="-1" aria-label="code-block-57-2"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" tabindex="-1" aria-label="code-block-57-1"></a><span class="ex">$</span> git init myfile.txt</span>
+<span id="cb57-2"><a href="#cb57-2" tabindex="-1" aria-label="code-block-57-2"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 <li><div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1" aria-label="code-block-58-1"></a>   <span class="ex">$</span> git add myfile.txt</span>
-<span id="cb58-2"><a href="#cb58-2" tabindex="-1" aria-label="code-block-58-2"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1" aria-label="code-block-58-1"></a><span class="ex">$</span> git add myfile.txt</span>
+<span id="cb58-2"><a href="#cb58-2" tabindex="-1" aria-label="code-block-58-2"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 <li><div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" tabindex="-1" aria-label="code-block-59-1"></a>   <span class="ex">$</span> git commit <span class="at">-m</span> myfile.txt <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" tabindex="-1" aria-label="code-block-59-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> myfile.txt <span class="st">"my recent changes"</span></span></code></pre>
 </div></li>
 </ol>
 </div>
@@ -2083,7 +2083,7 @@ imperative.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Would only create a commit if files have already been staged.</li>
@@ -2123,7 +2123,7 @@ changes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>First we make our changes to the <code>guacamole.md</code> and
 <code>groceries.md</code> files:</p>
@@ -2215,7 +2215,7 @@ state.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>recipes</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb68">
@@ -2282,7 +2282,7 @@ up-to-date <code>pizza.md</code> with two toppings?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>It is necessary to stage the changed file <strong>again</strong>:</p>
 <div class="codewrapper sourceCode" id="cb73">
@@ -2675,7 +2675,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>restore</code> command restores files from the repository,
@@ -2731,7 +2731,7 @@ e.g. 0b1d055).</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -2766,7 +2766,7 @@ one command.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2801,23 +2801,23 @@ one command.</p>
 <li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>   ketchup enhances pasta dishes</code></pre>
+<pre class="output" tabindex="0"><code>ketchup enhances pasta dishes</code></pre>
 </div></li>
 <li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>   I like tomatoes, therefore I like ketchup</code></pre>
+<pre class="output" tabindex="0"><code>I like tomatoes, therefore I like ketchup</code></pre>
 </div></li>
 <li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>   I like tomatoes, therefore I like ketchup
-   ketchup enhances pasta dishes</code></pre>
+<pre class="output" tabindex="0"><code>I like tomatoes, therefore I like ketchup
+ketchup enhances pasta dishes</code></pre>
 </div></li>
 <li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>   Error because you have changed ketchup.md without committing the changes</code></pre>
+<pre class="output" tabindex="0"><code>Error because you have changed ketchup.md without committing the changes</code></pre>
 </div></li>
 </ol>
 </div>
@@ -2828,7 +2828,7 @@ one command.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The changes to the file from the second <code>echo</code> command are
@@ -2893,7 +2893,7 @@ change.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>After adding a change, <code>git restore</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -3116,7 +3116,7 @@ it.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3183,7 +3183,7 @@ commit:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><code>git restore --staged guacamole.md</code><br><code>git status</code><br><code>git restore guacamole.md</code></p>
 </div>
@@ -5106,7 +5106,7 @@ non-textual file that is stored in version control?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose you take a picture of the guacamole and call it
 <code>guacamole.jpg</code>.</p>
@@ -5317,38 +5317,38 @@ started.</p>
 <col width="34%">
 <col width="59%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>order</th>
 <th>action . . . . . . . . . .</th>
 <th>command . . . . . . . . . .</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td></td>
 <td><code>echo 100 &gt;&gt; numbers.txt</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>6</td>
 <td>Celebrate!</td>
 <td></td>
@@ -5363,7 +5363,7 @@ started.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5371,38 +5371,38 @@ started.</p>
 <col width="34%">
 <col width="59%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>order</th>
 <th>action . . . . . .</th>
 <th>command . . . . . . . . . . . . . . . . . . .</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>Update local</td>
 <td><code>git pull origin main</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>Make changes</td>
 <td><code>echo 100 &gt;&gt; numbers.txt</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>Stage changes</td>
 <td><code>git add numbers.txt</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Commit changes</td>
 <td><code>git commit -m "Add 100 to numbers.txt"</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>Update remote</td>
 <td><code>git push origin main</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>6</td>
 <td>Celebrate!</td>
 <td></td>
@@ -5539,8 +5539,8 @@ of work.</li>
   "url": "https://hvwaldow.github.io/git-novice-hvw/instructor/aio.html",
   "identifier": "https://hvwaldow.github.io/git-novice-hvw/instructor/aio.html",
   "dateCreated": "2025-09-07",
-  "dateModified": "2026-04-28",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-05-05",
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
